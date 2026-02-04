@@ -4599,11 +4599,20 @@
                 return;
             }
 
-            let html = `<div class="department-name">${departmentName}</div>`;
+            // Get department number from first program
+            const deptNumber = programs[0].department;
+            const displayName = deptNumber ? `${departmentName} (${deptNumber})` : departmentName;
+
+            let html = `<div class="department-name">${displayName}</div>`;
 
             programs.forEach(program => {
                 const badgeClass = program.sheet === 'תואר 1' ? 'ba' : 'ma';
-                const badgeText = program.sheet === 'תואר 1' ? 'תואר ראשון' : 'תואר שני';
+                let badgeText = program.sheet === 'תואר 1' ? 'תואר ראשון' : 'תואר שני';
+
+                // Add Eilat campus indicator if institution is 4
+                if (program.institution == 4) {
+                    badgeText += ' - קמפוס אילת';
+                }
 
                 html += `
                     <div class="program-card">
