@@ -1,0 +1,4161 @@
+{
+  "לימודי מדבר": [
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 1,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": 2.0,
+      "description": "לימודי מדבר עם תזה - חקלאות וביוטכנולוגיה באזורים צחיחים"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 1,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": 8.0,
+      "description": "לימודי מדבר עם תזה - מיקרוביולוגיה סביבתית"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 1,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": 17.0,
+      "description": "לימודי מדבר עם תזה - השקיה וסביבת הצמח"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 1,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": 19.0,
+      "description": "לימודי מדבר עם תזה - אגרואינפורמטיקה"
+    }
+  ],
+  "הידרולוגיה ואיכות מים": [
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 3,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": 3.0,
+      "description": "הידרולוגיה ואיכות מים עם תזה - מיקרוביולוגיה ואיכות מים"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 3,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": 2.0,
+      "description": "הידרולוגיה ואיכות מים עם תזה - התפלה וטיפול במים"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 3,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": 1.0,
+      "description": "הידרולוגיה ואיכות מים עם תזה - משאבי מים"
+    }
+  ],
+  "פיזיקה סביבתית ואנרגית שמש": [
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 4,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": "",
+      "description": "פיזיקה סביבתית ואנרגית שמש עם תזה"
+    }
+  ],
+  "אקולוגיה, ממשק ושמירת טבע": [
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 8,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": 2.0,
+      "description": "אקולוגיה, ממשק ושמירת טבע עם תזה - ממשק ושמירת טבע"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 8,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": 1.0,
+      "description": "אקולוגיה, ממשק ושמירת טבע עם תזה - אקולוגיה אבולוציונית"
+    }
+  ],
+  "לימודי מדינת ישראל": [
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 16,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": "",
+      "description": "לימודי מדינת ישראל מחקרי"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 16,
+      "degree_level": 2,
+      "path": 2,
+      "specialization": "",
+      "description": "לימודי מדינת ישראל כללי"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 167,
+      "degree_level": 1,
+      "path": 2,
+      "specialization": "",
+      "description": "לימודי מדינת ישראל דו מחלקתי"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 167,
+      "degree_level": 1,
+      "path": 2,
+      "specialization": 30.0,
+      "description": "לימודי מדינת ישראל דו מחלקתי - לומדים על מדים"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 4,
+      "department": 167,
+      "degree_level": 1,
+      "path": 2,
+      "specialization": "",
+      "description": "לימודי מדינת ישראל דו מחלקתי - קמפוס אילת"
+    }
+  ],
+  "מדעי הקוגניציה והמח": [
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 19,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": "",
+      "description": "מדעי הקוגניציה והמח המחקרי"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 19,
+      "degree_level": 1,
+      "path": 2,
+      "specialization": "",
+      "description": "מדעי הקוגניציה והמח דו מחלקתי עם מדעי הרוח והחברה"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 19,
+      "degree_level": 1,
+      "path": 3,
+      "specialization": "",
+      "description": "מדעי הקוגניציה והמח ראשי"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 19,
+      "degree_level": 1,
+      "path": 8,
+      "specialization": "",
+      "description": "מדעי הקוגניציה והמח ראשי"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 19,
+      "degree_level": 1,
+      "path": 7,
+      "specialization": "",
+      "description": "מדעי הקוגניציה והמח דו מחלקתי עם מדעי הטבע"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 19,
+      "degree_level": 1,
+      "path": 7,
+      "specialization": 10.0,
+      "description": "מדעי הקוגניציה והמח דו מחלקתי עם מדעי הטבע - שילוב עם מדעי המחשב"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 19,
+      "degree_level": 1,
+      "path": 7,
+      "specialization": 7.0,
+      "description": "מדעי הקוגניציה והמח דו מחלקתי עם מדעי הטבע - שילוב עם מדעי החיים"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 19,
+      "degree_level": 1,
+      "path": 7,
+      "specialization": 6.0,
+      "description": "מדעי הקוגניציה והמח דו מחלקתי עם מדעי הטבע - שילוב עם מתמטיקה"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 19,
+      "degree_level": 1,
+      "path": 4,
+      "specialization": "",
+      "description": "מדעי הקוגניציה והמח חד מחלקתי"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 19,
+      "degree_level": 1,
+      "path": 6,
+      "specialization": "",
+      "description": "מדעי הקוגניציה והמח ראשי"
+    }
+  ],
+  "פסיכולוגיה": [
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 101,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": 31.0,
+      "description": "פסיכולוגיה מחקרי - פסיכולוגיה קלינית"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 101,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": 51.0,
+      "description": "פסיכולוגיה מחקרי - פסיכולוגיה התפתחותית"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 101,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": 71.0,
+      "description": "פסיכולוגיה מחקרי - פסיכולוגיה ניסויית: קוגניציה ומוח"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 101,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": 81.0,
+      "description": "פסיכולוגיה מחקרי - פסיכולוגיה חברתית"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 101,
+      "degree_level": 12,
+      "path": 1,
+      "specialization": 71.0,
+      "description": "פסיכולוגיה השלמה - פסיכולוגיה ניסויית: קוגניציה ומוח"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 101,
+      "degree_level": 12,
+      "path": 1,
+      "specialization": 81.0,
+      "description": "פסיכולוגיה השלמה - פסיכולוגיה חברתית"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 101,
+      "degree_level": 1,
+      "path": 2,
+      "specialization": 12.0,
+      "description": "פסיכולוגיה דו מחלקתי -  פיסיקה"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 101,
+      "degree_level": 1,
+      "path": 2,
+      "specialization": "",
+      "description": "פסיכולוגיה דו מחלקתי"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 101,
+      "degree_level": 1,
+      "path": 2,
+      "specialization": 15.0,
+      "description": "פסיכולוגיה דו מחלקתי - פסיכוביולוגיה"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 4,
+      "department": 101,
+      "degree_level": 1,
+      "path": 2,
+      "specialization": "",
+      "description": "פסיכולוגיה דו מחלקתי - קמפוס אילת"
+    }
+  ],
+  "סוציולוגיה ואנתרופולוגיה": [
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 102,
+      "degree_level": 2,
+      "path": 2,
+      "specialization": "",
+      "description": "סוציולוגיה ואנתרופולוגיה כללי"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 102,
+      "degree_level": 2,
+      "path": 2,
+      "specialization": 10.0,
+      "description": "סוציולוגיה ואנתרופולוגיה כללי - סוציולוגיה ארגונית"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 102,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": "",
+      "description": "סוציולוגיה ואנתרופולוגיה מחקרי"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 102,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": 10.0,
+      "description": "סוציולוגיה ואנתרופולוגיה מחקרי - סוציולוגיה ארגונית"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 102,
+      "degree_level": 1,
+      "path": 2,
+      "specialization": "",
+      "description": "סוציולוגיה ואנתרופולוגיה דו מחלקתי"
+    }
+  ],
+  "מקרא": [
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 121,
+      "degree_level": 2,
+      "path": 2,
+      "specialization": "",
+      "description": "מקרא  כללי"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 121,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": "",
+      "description": "מקרא מחקרי"
+    }
+  ],
+  "ספרות עברית": [
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 122,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": "",
+      "description": "ספרות עברית מחקרי"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 122,
+      "degree_level": 2,
+      "path": 2,
+      "specialization": 3.0,
+      "description": "ספרות עברית כללי - כתיבה יצירתית"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 122,
+      "degree_level": 2,
+      "path": 2,
+      "specialization": "",
+      "description": "ספרות עברית כללי"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 122,
+      "degree_level": 1,
+      "path": 1,
+      "specialization": "",
+      "description": "ספרות עברית ראשי"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 122,
+      "degree_level": 1,
+      "path": 2,
+      "specialization": "",
+      "description": "ספרות עברית דו-מחלקתי"
+    }
+  ],
+  "לשון עברית": [
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 123,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": 4.0,
+      "description": "לשון עברית מחקרי - עריכה לשונית"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 123,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": "",
+      "description": "לשון עברית מחקרי"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 123,
+      "degree_level": 2,
+      "path": 2,
+      "specialization": "",
+      "description": "לשון עברית כללי"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 123,
+      "degree_level": 2,
+      "path": 2,
+      "specialization": 4.0,
+      "description": "לשון עברית כללי - עריכה לשונית"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 123,
+      "degree_level": 1,
+      "path": 2,
+      "specialization": "",
+      "description": "לשון עברית דו-מחלקתי"
+    }
+  ],
+  "לימודי המזרח התיכון": [
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 124,
+      "degree_level": 2,
+      "path": 2,
+      "specialization": "",
+      "description": "לימודי המזרח התיכון כללי"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 124,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": "",
+      "description": "לימודי המזרח התיכון מחקרי"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 124,
+      "degree_level": 1,
+      "path": 1,
+      "specialization": "",
+      "description": "לימודי המזרח התיכון ראשי"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 124,
+      "degree_level": 1,
+      "path": 2,
+      "specialization": "",
+      "description": "לימודי המזרח התיכון דו מחלקתי"
+    }
+  ],
+  "היסטוריה של עם ישראל": [
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 125,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": "",
+      "description": "היסטוריה של עם ישראל מחקרי"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 125,
+      "degree_level": 2,
+      "path": 2,
+      "specialization": "",
+      "description": "היסטוריה של עם ישראל כללי"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 125,
+      "degree_level": 1,
+      "path": 2,
+      "specialization": "",
+      "description": "היסטוריה של עם ישראל דו מחלקתי"
+    }
+  ],
+  "מחשבת ישראל": [
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 126,
+      "degree_level": 2,
+      "path": 2,
+      "specialization": "",
+      "description": "מחשבת ישראל כללי"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 126,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": "",
+      "description": "מחשבת ישראל מחקרי"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 126,
+      "degree_level": 1,
+      "path": 2,
+      "specialization": "",
+      "description": "מחשבת ישראל דו-מחלקתי"
+    }
+  ],
+  "היסטוריה כללית": [
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 127,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": "",
+      "description": "היסטוריה כללית  מחקרי"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 127,
+      "degree_level": 2,
+      "path": 2,
+      "specialization": "",
+      "description": "היסטוריה כללית כללי"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 127,
+      "degree_level": 1,
+      "path": 2,
+      "specialization": "",
+      "description": "היסטוריה כללית דו מחלקתי"
+    }
+  ],
+  "מדעי הסביבה, גאואינפורמטיקה ותכנון ערים-גאוגרפיה": [
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 128,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": 6.0,
+      "description": "מדעי הסביבה, גאואינפורמטיקה ותכנון ערים-גאוגרפיה מחקרי - גיאואינפורמטיקה"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 128,
+      "degree_level": 2,
+      "path": 2,
+      "specialization": "",
+      "description": "מדעי הסביבה, גאואינפורמטיקה ותכנון ערים-גאוגרפיה כללי"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 128,
+      "degree_level": 2,
+      "path": 2,
+      "specialization": 7.0,
+      "description": "מדעי הסביבה, גאואינפורמטיקה ותכנון ערים-גאוגרפיה כללי - תכנון סביבתי"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 128,
+      "degree_level": 2,
+      "path": 2,
+      "specialization": 5.0,
+      "description": "מדעי הסביבה, גאואינפורמטיקה ותכנון ערים-גאוגרפיה כללי - תכנון עיר ואזור"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 128,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": "",
+      "description": "מדעי הסביבה, גאואינפורמטיקה ותכנון ערים-גאוגרפיה מחקרי"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 128,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": 7.0,
+      "description": "מדעי הסביבה, גאואינפורמטיקה ותכנון ערים-גאוגרפיה מחקרי - תכנון סביבתי"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 128,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": 5.0,
+      "description": "מדעי הסביבה, גאואינפורמטיקה ותכנון ערים-גאוגרפיה מחקרי - תכנון עיר ואזור"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 128,
+      "degree_level": 1,
+      "path": 2,
+      "specialization": "",
+      "description": "מדעי הסביבה, גאואינפורמטיקה ותכנון ערים-גאוגרפיה דו-מחלקתי"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 128,
+      "degree_level": 1,
+      "path": 3,
+      "specialization": "",
+      "description": "מדעי הסביבה, גאואינפורמטיקה ותכנון ערים-גאוגרפיה ראשי"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 128,
+      "degree_level": 1,
+      "path": 1,
+      "specialization": "",
+      "description": "מדעי הסביבה, גאואינפורמטיקה ותכנון ערים-גאוגרפיה חד-מחלקתי"
+    }
+  ],
+  "חינוך": [
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 129,
+      "degree_level": 2,
+      "path": 3,
+      "specialization": 8.0,
+      "description": "חינוך ללא עבודת גמר - מרוכז - חינוך, למידה והתחדשות"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 129,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": 8.0,
+      "description": "חינוך מחקרי - חינוך, למידה והתחדשות"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 129,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": 9.0,
+      "description": "חינוך מחקרי - מנהל, חברה ומדיניות החינוך"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 129,
+      "degree_level": 2,
+      "path": 3,
+      "specialization": 9.0,
+      "description": "חינוך ללא עבודת גמר - מרוכז - מנהל, חברה ומדיניות החינוך"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 129,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": 4.0,
+      "description": "חינוך מחקרי - יעוץ חינוכי"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 129,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": 10.0,
+      "description": "חינוך מחקרי - פסיכולוגיה חינוכית"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 129,
+      "degree_level": 2,
+      "path": 2,
+      "specialization": 4.0,
+      "description": "חינוך כללי - יעוץ חינוכי"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 129,
+      "degree_level": 1,
+      "path": 2,
+      "specialization": "",
+      "description": "חינוך דו-מחלקתי"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 129,
+      "degree_level": 1,
+      "path": 1,
+      "specialization": 2.0,
+      "description": "חינוך ראשי - מנהל ומדיניות חינוך"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 129,
+      "degree_level": 1,
+      "path": 1,
+      "specialization": 3.0,
+      "description": "חינוך ראשי - הוראה, למידה ותוכניות לימודים"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 129,
+      "degree_level": 1,
+      "path": 1,
+      "specialization": 1.0,
+      "description": "חינוך ראשי - פסיכולוגיה במערכת החינוכית"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 4,
+      "department": 129,
+      "degree_level": 1,
+      "path": 2,
+      "specialization": "",
+      "description": "חינוך דו-מחלקתי - קמפוס אילת"
+    }
+  ],
+  "פילוסופיה": [
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 131,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": "",
+      "description": "פילוסופיה מחקרי"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 131,
+      "degree_level": 2,
+      "path": 2,
+      "specialization": "",
+      "description": "פילוסופיה כללי"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 131,
+      "degree_level": 1,
+      "path": 2,
+      "specialization": "",
+      "description": "פילוסופיה דו מחלקתי"
+    }
+  ],
+  "ספרויות זרות": [
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 132,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": "",
+      "description": "ספרויות זרות מחקרי"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 132,
+      "degree_level": 2,
+      "path": 2,
+      "specialization": "",
+      "description": "ספרויות זרות כללי"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 132,
+      "degree_level": 1,
+      "path": 2,
+      "specialization": 1.0,
+      "description": "ספרויות זרות דו מחלקתי - ספרות אנגלית"
+    }
+  ],
+  "בלשנות": [
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 133,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": "",
+      "description": "בלשנות מחקרי"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 133,
+      "degree_level": 2,
+      "path": 2,
+      "specialization": "",
+      "description": "בלשנות כללי"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 133,
+      "degree_level": 1,
+      "path": 22,
+      "specialization": "",
+      "description": "בלשנות דו מחלקתי"
+    }
+  ],
+  "ארכיאולוגיה": [
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 135,
+      "degree_level": 2,
+      "path": 2,
+      "specialization": "",
+      "description": "ארכיאולוגיה כללי"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 135,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": 3.0,
+      "description": "ארכיאולוגיה מחקרי - מדעי החומרים הארכיאולוגיים ושימור"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 135,
+      "degree_level": 2,
+      "path": 2,
+      "specialization": 3.0,
+      "description": "ארכיאולוגיה כללי - מדעי החומרים הארכיאולוגיים ושימור"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 135,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": "",
+      "description": "ארכיאולוגיה מחקרי"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 135,
+      "degree_level": 1,
+      "path": 2,
+      "specialization": "",
+      "description": "ארכיאולוגיה דו מחלקתי"
+    }
+  ],
+  "פוליטיקה וממשל": [
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 138,
+      "degree_level": 2,
+      "path": 2,
+      "specialization": 4.0,
+      "description": "פוליטיקה וממשל כללי - שינוי חברתי ופוליטי בר קיימא"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 138,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": "",
+      "description": "פוליטיקה וממשל מחקרי"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 138,
+      "degree_level": 2,
+      "path": 2,
+      "specialization": "",
+      "description": "פוליטיקה וממשל כללי"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 138,
+      "degree_level": 1,
+      "path": 2,
+      "specialization": "",
+      "description": "פוליטיקה וממשל דו מחלקתי"
+    }
+  ],
+  "כלכלה": [
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 142,
+      "degree_level": 2,
+      "path": 2,
+      "specialization": "",
+      "description": "כלכלה כללי"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 142,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": "",
+      "description": "כלכלה מחקרי"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 142,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": 7.0,
+      "description": "כלכלה מחקרי - מדעי הנתונים"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 142,
+      "degree_level": 1,
+      "path": 1,
+      "specialization": 6.0,
+      "description": "כלכלה חד מחלקתי - חשבונאות"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 142,
+      "degree_level": 1,
+      "path": 8,
+      "specialization": 1.0,
+      "description": "כלכלה חד מחלקתי - מצטיינים - מנהל עסקים"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 142,
+      "degree_level": 1,
+      "path": 1,
+      "specialization": 1.0,
+      "description": "כלכלה חד מחלקתי - מנהל עסקים"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 142,
+      "degree_level": 1,
+      "path": 2,
+      "specialization": "",
+      "description": "כלכלה דו מחלקתי"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 142,
+      "degree_level": 1,
+      "path": 3,
+      "specialization": "",
+      "description": "כלכלה ראשי"
+    }
+  ],
+  "עבודה סוציאלית": [
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 144,
+      "degree_level": 2,
+      "path": 2,
+      "specialization": 3.0,
+      "description": "עבודה סוציאלית כללי - טיפול באמצעות אמנויות"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 144,
+      "degree_level": 2,
+      "path": 2,
+      "specialization": 4.0,
+      "description": "עבודה סוציאלית כללי - ילד ומשפחה"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 144,
+      "degree_level": 2,
+      "path": 2,
+      "specialization": 8.0,
+      "description": "עבודה סוציאלית כללי - עבודה טיפולית לקידום צדק חברתי"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 144,
+      "degree_level": 2,
+      "path": 2,
+      "specialization": 6.0,
+      "description": "עבודה סוציאלית כללי - בריאות הנפש"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 144,
+      "degree_level": 2,
+      "path": 2,
+      "specialization": 9.0,
+      "description": "עבודה סוציאלית כללי -  אינטגרטיבית"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 144,
+      "degree_level": 12,
+      "path": 1,
+      "specialization": "",
+      "description": "עבודה סוציאלית השלמה"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 4,
+      "department": 144,
+      "degree_level": 2,
+      "path": 2,
+      "specialization": 4.0,
+      "description": "עבודה סוציאלית כללי - ילד ומשפחה - קמפוס אילת"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 144,
+      "degree_level": 1,
+      "path": 1,
+      "specialization": 11.0,
+      "description": "עבודה סוציאלית חד מחלקתי - לימודי נוער"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 144,
+      "degree_level": 1,
+      "path": 1,
+      "specialization": 12.0,
+      "description": "עבודה סוציאלית חד מחלקתי - מסלול רגיל"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 4,
+      "department": 144,
+      "degree_level": 1,
+      "path": 1,
+      "specialization": "",
+      "description": "עבודה סוציאלית חד מחלקתי - קמפוס אילת"
+    }
+  ],
+  "תקשורת": [
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 183,
+      "degree_level": 2,
+      "path": 2,
+      "specialization": "",
+      "description": "תקשורת הכללי"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 183,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": "",
+      "description": "תקשורת המחקרי"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 183,
+      "degree_level": 1,
+      "path": 2,
+      "specialization": "",
+      "description": "תקשורת דו מחלקתי"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 4,
+      "department": 183,
+      "degree_level": 1,
+      "path": 2,
+      "specialization": "",
+      "description": "תקשורת דו מחלקתי - קמפוס אילת"
+    }
+  ],
+  "לימודי אפריקה": [
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 192,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": "",
+      "description": "לימודי אפריקה מחקרי"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 192,
+      "degree_level": 2,
+      "path": 2,
+      "specialization": "",
+      "description": "לימודי אפריקה כללי"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 192,
+      "degree_level": 1,
+      "path": 2,
+      "specialization": "",
+      "description": "לימודי אפריקה דו מחלקתי"
+    }
+  ],
+  "תולדות האמנות ותרבות חזותית": [
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 194,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": 3.0,
+      "description": "תולדות האמנות ותרבות חזותית מחקרי - אוצרות מוזיאוני מורשת"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 194,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": 2.0,
+      "description": "תולדות האמנות ותרבות חזותית מחקרי - אוצרות באמנות"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 194,
+      "degree_level": 2,
+      "path": 2,
+      "specialization": "",
+      "description": "תולדות האמנות ותרבות חזותית כללי"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 194,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": "",
+      "description": "תולדות האמנות ותרבות חזותית מחקרי"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 4,
+      "department": 194,
+      "degree_level": 2,
+      "path": 2,
+      "specialization": "",
+      "description": "תולדות האמנות ותרבות חזותית כללי - קמפוס אילת"
+    }
+  ],
+  "לימודי מגדר": [
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 196,
+      "degree_level": 2,
+      "path": 2,
+      "specialization": "",
+      "description": "לימודי מגדר כללי"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 196,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": "",
+      "description": "לימודי מגדר מחקרי"
+    }
+  ],
+  "מדעי הקוגניציה והמוח": [
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 197,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": "",
+      "description": "מדעי הקוגניציה והמוח מחקרי"
+    }
+  ],
+  "ניהול וישוב סכסוכים": [
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 198,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": "",
+      "description": "ניהול וישוב סכסוכים מחקרי"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 198,
+      "degree_level": 2,
+      "path": 2,
+      "specialization": "",
+      "description": "ניהול וישוב סכסוכים כללי"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 4,
+      "department": 198,
+      "degree_level": 2,
+      "path": 2,
+      "specialization": "",
+      "description": "ניהול וישוב סכסוכים כללי - קמפוס אילת"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 198,
+      "degree_level": 1,
+      "path": 7,
+      "specialization": "",
+      "description": "ניהול וישוב סכסוכים חטיבה מורחבת"
+    }
+  ],
+  "הוראת המדעים והטכנולוגיה": [
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 199,
+      "degree_level": 2,
+      "path": 2,
+      "specialization": 2.0,
+      "description": "הוראת המדעים והטכנולוגיה כללי - הוראת המתמטיקה"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 199,
+      "degree_level": 2,
+      "path": 2,
+      "specialization": 3.0,
+      "description": "הוראת המדעים והטכנולוגיה כללי - הוראת הביולוגיה"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 199,
+      "degree_level": 2,
+      "path": 2,
+      "specialization": "",
+      "description": "הוראת המדעים והטכנולוגיה כללי"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 199,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": 2.0,
+      "description": "הוראת המדעים והטכנולוגיה מחקרי - הוראת המתמטיקה"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 199,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": 3.0,
+      "description": "הוראת המדעים והטכנולוגיה מחקרי - הוראת הביולוגיה"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 199,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": "",
+      "description": "הוראת המדעים והטכנולוגיה מחקרי"
+    }
+  ],
+  "מתמטיקה": [
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 201,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": 2.0,
+      "description": "מתמטיקה עבודת גמר - מתמטיקה יישומית"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 201,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": 33.0,
+      "description": "מתמטיקה עבודת גמר - מתמטיקה עיונית"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 201,
+      "degree_level": 12,
+      "path": 2,
+      "specialization": 33.0,
+      "description": "מתמטיקה צבירה - מתמטיקה עיונית"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 201,
+      "degree_level": 12,
+      "path": 2,
+      "specialization": 2.0,
+      "description": "מתמטיקה צבירה - מתמטיקה יישומית"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 201,
+      "degree_level": 12,
+      "path": 2,
+      "specialization": 4.0,
+      "description": "מתמטיקה צבירה - הוראת המתמטיקה"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 201,
+      "degree_level": 1,
+      "path": 15,
+      "specialization": "",
+      "description": "מתמטיקה ראשי"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 201,
+      "degree_level": 1,
+      "path": 6,
+      "specialization": 32.0,
+      "description": "מתמטיקה דו מחלקתי - מחלקות הפקולטה למדעי הרוח והחברה"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 201,
+      "degree_level": 1,
+      "path": 10,
+      "specialization": 22.0,
+      "description": "מתמטיקה ראשי - מדעי הטבע"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 201,
+      "degree_level": 1,
+      "path": 6,
+      "specialization": 31.0,
+      "description": "מתמטיקה דו מחלקתי - פיסיקה"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 201,
+      "degree_level": 1,
+      "path": 6,
+      "specialization": 28.0,
+      "description": "מתמטיקה דו מחלקתי -  מדעי הקוגניציה והמוח"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 201,
+      "degree_level": 1,
+      "path": 6,
+      "specialization": 27.0,
+      "description": "מתמטיקה דו מחלקתי -  המחלקה לסטטיסטיקה"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 201,
+      "degree_level": 1,
+      "path": 1,
+      "specialization": 1.0,
+      "description": "מתמטיקה חד-מחלקתי - מתמטיקה כללית"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 201,
+      "degree_level": 1,
+      "path": 6,
+      "specialization": 49.0,
+      "description": "מתמטיקה דו מחלקתי - יזמות וחדשנות"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 201,
+      "degree_level": 1,
+      "path": 6,
+      "specialization": 44.0,
+      "description": "מתמטיקה דו מחלקתי - קיימות ושמירת סביבה"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 201,
+      "degree_level": 1,
+      "path": 6,
+      "specialization": 35.0,
+      "description": "מתמטיקה דו מחלקתי - מדעי כדור הארץ והסביבה"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 201,
+      "degree_level": 1,
+      "path": 2,
+      "specialization": 30.0,
+      "description": "מתמטיקה משולב לתואר כפול - והנדסת מכונות"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 201,
+      "degree_level": 1,
+      "path": 2,
+      "specialization": 18.0,
+      "description": "מתמטיקה משולב לתואר כפול - והנדסת חשמל ומחשבים"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 201,
+      "degree_level": 1,
+      "path": 6,
+      "specialization": 11.0,
+      "description": "מתמטיקה דו מחלקתי - מתמטיקה ומדעי המחשב"
+    }
+  ],
+  "מדעי המחשב": [
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 202,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": 8.0,
+      "description": "מדעי המחשב עבודת גמר - ביו-אינפורמטיקה"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 202,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": 2.0,
+      "description": "מדעי המחשב עבודת גמר - בינה מלאכותית ומערכות תכנה אוטונומיות"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 202,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": 0.0,
+      "description": "מדעי המחשב עבודת גמר - מדעי המחשב"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 202,
+      "degree_level": 2,
+      "path": 3,
+      "specialization": "",
+      "description": "מדעי המחשב עבודת גמר"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 202,
+      "degree_level": 12,
+      "path": 2,
+      "specialization": 8.0,
+      "description": "מדעי המחשב צבירה - ביו-אינפורמטיקה"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 202,
+      "degree_level": 12,
+      "path": 2,
+      "specialization": 0.0,
+      "description": "מדעי המחשב צבירה - מדעי המחשב"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 202,
+      "degree_level": 12,
+      "path": 2,
+      "specialization": 2.0,
+      "description": "מדעי המחשב צבירה - בינה מלאכותית ומערכות תכנה אוטונומיות"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 202,
+      "degree_level": 12,
+      "path": 2,
+      "specialization": 7.0,
+      "description": "מדעי המחשב צבירה - אבטחת המרחב המקוון - בשיתוף עם הנדסת מערכות מידע"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 202,
+      "degree_level": 1,
+      "path": 10,
+      "specialization": 22.0,
+      "description": "מדעי המחשב ראשי - מחלקות מדעי הטבע"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 202,
+      "degree_level": 1,
+      "path": 15,
+      "specialization": "",
+      "description": "מדעי המחשב ראשי"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 202,
+      "degree_level": 1,
+      "path": 6,
+      "specialization": 49.0,
+      "description": "מדעי המחשב דו מחלקתי - יזמות וחדשנות"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 202,
+      "degree_level": 1,
+      "path": 6,
+      "specialization": 34.0,
+      "description": "מדעי המחשב דו מחלקתי - מדעי כדור הארץ"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 202,
+      "degree_level": 1,
+      "path": 6,
+      "specialization": 33.0,
+      "description": "מדעי המחשב דו מחלקתי - מדעי החיים"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 202,
+      "degree_level": 1,
+      "path": 6,
+      "specialization": 28.0,
+      "description": "מדעי המחשב דו מחלקתי - מדעי הקוגניציה והמוח"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 202,
+      "degree_level": 1,
+      "path": 6,
+      "specialization": 26.0,
+      "description": "מדעי המחשב דו מחלקתי - המחלקה לניהול"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 202,
+      "degree_level": 1,
+      "path": 6,
+      "specialization": 21.0,
+      "description": "מדעי המחשב דו מחלקתי - מדעי הרוח והחברה"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 202,
+      "degree_level": 1,
+      "path": 6,
+      "specialization": 11.0,
+      "description": "מדעי המחשב דו מחלקתי - מתמטיקה ומדעי המחשב"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 202,
+      "degree_level": 1,
+      "path": 3,
+      "specialization": 12.0,
+      "description": "מדעי המחשב משולב לתואר כפול - ומדעי כדור הארץ והסביבה"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 202,
+      "degree_level": 1,
+      "path": 3,
+      "specialization": 10.0,
+      "description": "מדעי המחשב משולב לתואר כפול -   פיסיקה"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 202,
+      "degree_level": 1,
+      "path": 1,
+      "specialization": 14.0,
+      "description": "מדעי המחשב חד-מחלקתי - ביואינפורמטיקה"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 202,
+      "degree_level": 1,
+      "path": 1,
+      "specialization": 13.0,
+      "description": "מדעי המחשב חד-מחלקתי - מדעי הנתונים"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 202,
+      "degree_level": 1,
+      "path": 1,
+      "specialization": 3.0,
+      "description": "מדעי המחשב חד-מחלקתי - מדעי המחשב"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 202,
+      "degree_level": 1,
+      "path": 2,
+      "specialization": 19.0,
+      "description": "מדעי המחשב משולב לתואר כפול - הנדסת חשמל ומחשבים"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 202,
+      "degree_level": 1,
+      "path": 3,
+      "specialization": 16.0,
+      "description": "מדעי המחשב משולב לתואר כפול - ביופיסיקה-ביואינפורמטיקה"
+    }
+  ],
+  "פיסיקה": [
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 203,
+      "degree_level": 2,
+      "path": 7,
+      "specialization": 18.0,
+      "description": "פיסיקה מדע וטכנולוגיה קוואנטיים - טכנולוגיה אטומית קוונטית ומידע קוונטי"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 203,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": 19.0,
+      "description": "פיסיקה עבודת גמר - ביו-פיסיקה"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 203,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": 0.0,
+      "description": "פיסיקה עבודת גמר - פיסיקה"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 203,
+      "degree_level": 12,
+      "path": 2,
+      "specialization": 19.0,
+      "description": "פיסיקה צבירה - ביו-פיסיקה"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 203,
+      "degree_level": 12,
+      "path": 2,
+      "specialization": 18.0,
+      "description": "פיסיקה צבירה - טכנולוגיה אטומית קוונטית ומידע קוונטי"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 203,
+      "degree_level": 12,
+      "path": 2,
+      "specialization": 0.0,
+      "description": "פיסיקה צבירה - פיסיקה"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 203,
+      "degree_level": 1,
+      "path": 2,
+      "specialization": 5.0,
+      "description": "פיסיקה משולב לתואר כפול - פיסיקה והנדסת חומרים"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 203,
+      "degree_level": 1,
+      "path": 2,
+      "specialization": 8.0,
+      "description": "פיסיקה משולב לתואר כפול - פיסיקה והנדסת מכונות"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 203,
+      "degree_level": 1,
+      "path": 3,
+      "specialization": 10.0,
+      "description": "פיסיקה משולב לתואר כפול -  מדעי המחשב"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 203,
+      "degree_level": 1,
+      "path": 6,
+      "specialization": 28.0,
+      "description": "פיסיקה דו מחלקתי - מדעי הקוגניציה והמח"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 203,
+      "degree_level": 1,
+      "path": 6,
+      "specialization": 31.0,
+      "description": "פיסיקה דו מחלקתי - מתמטיקה"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 203,
+      "degree_level": 1,
+      "path": 6,
+      "specialization": 34.0,
+      "description": "פיסיקה דו מחלקתי - מדעי החיים"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 203,
+      "degree_level": 1,
+      "path": 6,
+      "specialization": 35.0,
+      "description": "פיסיקה דו מחלקתי - כימיה"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 203,
+      "degree_level": 1,
+      "path": 6,
+      "specialization": 36.0,
+      "description": "פיסיקה דו מחלקתי - מדעי כדור הארץ והסביבה"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 203,
+      "degree_level": 1,
+      "path": 7,
+      "specialization": 20.0,
+      "description": "פיסיקה דו מחלקתי - פסיכולוגיה"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 203,
+      "degree_level": 1,
+      "path": 1,
+      "specialization": "",
+      "description": "פיסיקה חד מחלקתי"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 203,
+      "degree_level": 1,
+      "path": 10,
+      "specialization": 22.0,
+      "description": "פיסיקה ראשי - מדעי הטבע"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 203,
+      "degree_level": 1,
+      "path": 15,
+      "specialization": "",
+      "description": "פיסיקה ראשי"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 203,
+      "degree_level": 1,
+      "path": 2,
+      "specialization": 3.0,
+      "description": "פיסיקה משולב לתואר כפול - פיסיקה והנדסת חשמל"
+    }
+  ],
+  "כימיה": [
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 204,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": 0.0,
+      "description": "כימיה עבודת גמר - כימיה"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 204,
+      "degree_level": 12,
+      "path": 2,
+      "specialization": 0.0,
+      "description": "כימיה צבירה - כימיה"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 204,
+      "degree_level": 1,
+      "path": 1,
+      "specialization": 13.0,
+      "description": "כימיה חד מחלקתי - כימיה פיסיקלית קוונטית"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 204,
+      "degree_level": 1,
+      "path": 1,
+      "specialization": 14.0,
+      "description": "כימיה חד מחלקתי - כימיה"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 204,
+      "degree_level": 1,
+      "path": 6,
+      "specialization": 39.0,
+      "description": "כימיה דו מחלקתי - אינפוכימיה"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 204,
+      "degree_level": 1,
+      "path": 6,
+      "specialization": 38.0,
+      "description": "כימיה דו מחלקתי - עם מדעי החיים"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 204,
+      "degree_level": 1,
+      "path": 10,
+      "specialization": 22.0,
+      "description": "כימיה ראשי - מדעי הטבע"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 204,
+      "degree_level": 1,
+      "path": 6,
+      "specialization": 33.0,
+      "description": "כימיה דו מחלקתי - מדעי כדור הארץ והסביבה"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 204,
+      "degree_level": 1,
+      "path": 2,
+      "specialization": 6.0,
+      "description": "כימיה משולב לתואר כפול - כימיה וננוטכנולוגיה, הנדסה כימית"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 204,
+      "degree_level": 1,
+      "path": 3,
+      "specialization": 16.0,
+      "description": "כימיה משולב תואר כפול - ביופיסיקה-ביואינפורמטיקה"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 204,
+      "degree_level": 1,
+      "path": 15,
+      "specialization": "",
+      "description": "כימיה ראשי"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 204,
+      "degree_level": 1,
+      "path": 6,
+      "specialization": 35.0,
+      "description": "כימיה דו מחלקתי - פיסיקה"
+    }
+  ],
+  "מדעי החיים": [
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 205,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": 29.0,
+      "description": "מדעי החיים עבודת גמר - ביו-פיסיקה"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 205,
+      "degree_level": 2,
+      "path": 2,
+      "specialization": 42.0,
+      "description": "מדעי החיים עבודת גמר אקולוגיה, ממשק ושמירת טבע - ממשק ושמירת טבע"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 205,
+      "degree_level": 2,
+      "path": 2,
+      "specialization": 41.0,
+      "description": "מדעי החיים עבודת גמר אקולוגיה, ממשק ושמירת טבע - אקולוגיה אבולוציונית"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 205,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": 0.0,
+      "description": "מדעי החיים עבודת גמר - מדעי החיים"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 205,
+      "degree_level": 12,
+      "path": 2,
+      "specialization": 41.0,
+      "description": "מדעי החיים צבירה - אקולוגיה אבולוציונית"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 205,
+      "degree_level": 12,
+      "path": 2,
+      "specialization": 29.0,
+      "description": "מדעי החיים צבירה - ביו-פיסיקה"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 205,
+      "degree_level": 12,
+      "path": 2,
+      "specialization": 13.0,
+      "description": "מדעי החיים צבירה - ביולוגיה וביוטכנולוגיה ימית"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 205,
+      "degree_level": 12,
+      "path": 2,
+      "specialization": 0.0,
+      "description": "מדעי החיים צבירה - מדעי החיים"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 205,
+      "degree_level": 12,
+      "path": 2,
+      "specialization": 42.0,
+      "description": "מדעי החיים צבירה - ממשק ושמירת טבע"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 4,
+      "department": 205,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": 13.0,
+      "description": "מדעי החיים עבודת גמר - ביולוגיה וביוטכנולוגיה ימית - קמפוס אילת"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 205,
+      "degree_level": 1,
+      "path": 6,
+      "specialization": 33.0,
+      "description": "מדעי החיים דו מחלקתי - מדעי המחשב"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 205,
+      "degree_level": 1,
+      "path": 6,
+      "specialization": 34.0,
+      "description": "מדעי החיים דו מחלקתי - פיסיקה"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 205,
+      "degree_level": 1,
+      "path": 6,
+      "specialization": 38.0,
+      "description": "מדעי החיים דו מחלקתי - כימיה"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 205,
+      "degree_level": 1,
+      "path": 6,
+      "specialization": 44.0,
+      "description": "מדעי החיים דו מחלקתי - קיימות ושמירת סביבה"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 205,
+      "degree_level": 1,
+      "path": 6,
+      "specialization": 32.0,
+      "description": "מדעי החיים דו מחלקתי - מחלקות הפקולטה למדעי הרוח והחברה"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 205,
+      "degree_level": 1,
+      "path": 10,
+      "specialization": 22.0,
+      "description": "מדעי החיים ראשי - עם מדעי הטבע"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 205,
+      "degree_level": 1,
+      "path": 3,
+      "specialization": 11.0,
+      "description": "מדעי החיים משולב לתואר כפול - מדעי החיים עם מדעי כדור הארץ והסביבה"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 205,
+      "degree_level": 1,
+      "path": 3,
+      "specialization": 13.0,
+      "description": "מדעי החיים משולב לתואר כפול - ביולוגיה וביוטכנולוגיה ימית"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 205,
+      "degree_level": 1,
+      "path": 1,
+      "specialization": 9.0,
+      "description": "מדעי החיים חד מחלקתי - מדעי החיים"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 205,
+      "degree_level": 1,
+      "path": 30,
+      "specialization": 15.0,
+      "description": "מדעי החיים דו מחלקתי - פסיכוביולוגיה"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 205,
+      "degree_level": 1,
+      "path": 6,
+      "specialization": 27.0,
+      "description": "מדעי החיים דו מחלקתי - המחלקה לסטטיסטיקה"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 205,
+      "degree_level": 1,
+      "path": 6,
+      "specialization": 28.0,
+      "description": "מדעי החיים דו מחלקתי - מדעי הקוגניציה והמוח"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 205,
+      "degree_level": 1,
+      "path": 15,
+      "specialization": "",
+      "description": "מדעי החיים ראשי"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 205,
+      "degree_level": 1,
+      "path": 6,
+      "specialization": 31.0,
+      "description": "מדעי החיים דו מחלקתי - גיאוגרפיה ופיתוח סביבתי"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 205,
+      "degree_level": 1,
+      "path": 6,
+      "specialization": 30.0,
+      "description": "מדעי החיים דו מחלקתי - המחלקה לניהול"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 4,
+      "department": 205,
+      "degree_level": 1,
+      "path": 1,
+      "specialization": 13.0,
+      "description": "מדעי החיים חד מחלקתי - ביולוגיה וביוטכנולוגיה ימית - קמפוס אילת"
+    }
+  ],
+  "מדעי כדור הארץ והסביבה": [
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 206,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": 29.0,
+      "description": "מדעי כדור הארץ והסביבה עבודת גמר - גיאולוגיה של נפט וגז"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 206,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": 6.0,
+      "description": "מדעי כדור הארץ והסביבה עבודת גמר - גיאולוגיה הנדסית"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 206,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": 27.0,
+      "description": "מדעי כדור הארץ והסביבה עבודת גמר - כללית"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 206,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": 28.0,
+      "description": "מדעי כדור הארץ והסביבה עבודת גמר - סביבתית/אוקינוגרפית"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 206,
+      "degree_level": 1,
+      "path": 15,
+      "specialization": "",
+      "description": "מדעי כדור הארץ והסביבה ראשי"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 206,
+      "degree_level": 1,
+      "path": 10,
+      "specialization": 22.0,
+      "description": "מדעי כדור הארץ והסביבה ראשי - מדעי הטבע"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 206,
+      "degree_level": 1,
+      "path": 6,
+      "specialization": 44.0,
+      "description": "מדעי כדור הארץ והסביבה דו מחלקתי - קיימות ושמירת סביבה"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 206,
+      "degree_level": 1,
+      "path": 6,
+      "specialization": 36.0,
+      "description": "מדעי כדור הארץ והסביבה דו מחלקתי - פיסיקה"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 206,
+      "degree_level": 1,
+      "path": 6,
+      "specialization": 35.0,
+      "description": "מדעי כדור הארץ והסביבה דו מחלקתי - מתמטיקה"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 206,
+      "degree_level": 1,
+      "path": 6,
+      "specialization": 34.0,
+      "description": "מדעי כדור הארץ והסביבה דו מחלקתי - מדעי המחשב"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 206,
+      "degree_level": 1,
+      "path": 6,
+      "specialization": 33.0,
+      "description": "מדעי כדור הארץ והסביבה דו מחלקתי - כימיה"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 206,
+      "degree_level": 1,
+      "path": 6,
+      "specialization": 32.0,
+      "description": "מדעי כדור הארץ והסביבה דו מחלקתי - מחלקות הפקולטה למדעי הרוח והחברה"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 206,
+      "degree_level": 1,
+      "path": 6,
+      "specialization": 24.0,
+      "description": "מדעי כדור הארץ והסביבה דו מחלקתי - המחלקה לסטטיסטיקה"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 206,
+      "degree_level": 1,
+      "path": 2,
+      "specialization": 10.0,
+      "description": "מדעי כדור הארץ והסביבה משולב לתואר כפול - מדעי כדור הארץ והסביבה והנדסת בניין"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 206,
+      "degree_level": 1,
+      "path": 3,
+      "specialization": 14.0,
+      "description": "מדעי כדור הארץ והסביבה משולב לתואר כפול -  מדעי החיים - במגמה לביולוגיה וביוטכנולוגיה ימית"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 206,
+      "degree_level": 1,
+      "path": 3,
+      "specialization": 12.0,
+      "description": "מדעי כדור הארץ והסביבה משולב לתואר כפול - מדעי כדור הארץ והסביבה ומדעי המחשב"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 206,
+      "degree_level": 1,
+      "path": 1,
+      "specialization": "",
+      "description": "מדעי כדור הארץ והסביבה חד מחלקתי"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 206,
+      "degree_level": 1,
+      "path": 3,
+      "specialization": 11.0,
+      "description": "מדעי כדור הארץ והסביבה משולב לתואר כפול - מדעי כדור הארץ והסביבה עם מדעי החיים"
+    }
+  ],
+  "הנדסת חשמל ומחשבים": [
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 361,
+      "degree_level": 2,
+      "path": 2,
+      "specialization": "",
+      "description": "הנדסת חשמל ומחשבים חד מחלקתי עם סמינר מסכם"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 361,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": "",
+      "description": "הנדסת חשמל ומחשבים חד מחלקתי עם עבודת גמר (תיזה)"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 361,
+      "degree_level": 2,
+      "path": 8,
+      "specialization": "",
+      "description": "הנדסת חשמל ומחשבים לימודי צבירה"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 361,
+      "degree_level": 1,
+      "path": 1,
+      "specialization": 118.0,
+      "description": "הנדסת חשמל ומחשבים חד מחלקתי - התמחות במתמטיקה"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 361,
+      "degree_level": 1,
+      "path": 2,
+      "specialization": 3.0,
+      "description": "הנדסת חשמל ומחשבים משולב לתואר כפול - פיסיקה חשמל"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 361,
+      "degree_level": 1,
+      "path": 1,
+      "specialization": 119.0,
+      "description": "הנדסת חשמל ומחשבים חד מחלקתי - רעמים"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 361,
+      "degree_level": 1,
+      "path": 5,
+      "specialization": 77.0,
+      "description": "הנדסת חשמל ומחשבים משולב לתואר כפול - הנדסת חשמל ומחשבים והנדסת מכונות"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 361,
+      "degree_level": 1,
+      "path": 1,
+      "specialization": "",
+      "description": "הנדסת חשמל ומחשבים חד מחלקתי"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 361,
+      "degree_level": 1,
+      "path": 2,
+      "specialization": 18.0,
+      "description": "הנדסת חשמל ומחשבים משולב לתואר כפול - מתמטיקה והנדסת חשמל ומחשבים"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 361,
+      "degree_level": 1,
+      "path": 2,
+      "specialization": 19.0,
+      "description": "הנדסת חשמל ומחשבים משולב לתואר כפול - חשמל מדעי המחשב"
+    }
+  ],
+  "הנדסת מכונות": [
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 362,
+      "degree_level": 2,
+      "path": 8,
+      "specialization": "",
+      "description": "הנדסת מכונות לימודי צבירה"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 362,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": "",
+      "description": "הנדסת מכונות חד מחלקתי עם עבודת גמר (תיזה)"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 362,
+      "degree_level": 2,
+      "path": 2,
+      "specialization": "",
+      "description": "הנדסת מכונות חד מחלקתי עם סמינר מסכם"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 362,
+      "degree_level": 1,
+      "path": 1,
+      "specialization": "",
+      "description": "הנדסת מכונות חד מחלקתי"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 362,
+      "degree_level": 1,
+      "path": 2,
+      "specialization": 8.0,
+      "description": "הנדסת מכונות משולב לתואר כפול - מכונות ופיסיקה"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 362,
+      "degree_level": 1,
+      "path": 5,
+      "specialization": 77.0,
+      "description": "הנדסת מכונות משולב לתואר כפול - הנדסת חשמל ומחשבים והנדסת מכונות"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 362,
+      "degree_level": 1,
+      "path": 4,
+      "specialization": 34.0,
+      "description": "הנדסת מכונות משולב לתואר כפול - חומרים ומכונות"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 362,
+      "degree_level": 1,
+      "path": 2,
+      "specialization": 30.0,
+      "description": "הנדסת מכונות משולב לתואר כפול - הנדסת מכונות מתמטיקה"
+    }
+  ],
+  "הנדסה כימית": [
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 363,
+      "degree_level": 2,
+      "path": 2,
+      "specialization": "",
+      "description": "הנדסה כימית חד מחלקתי עם סמינר מסכם"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 363,
+      "degree_level": 2,
+      "path": 8,
+      "specialization": "",
+      "description": "הנדסה כימית לימודי צבירה"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 363,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": "",
+      "description": "הנדסה כימית חד מחלקתי עם עבודת גמר (תיזה)"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 363,
+      "degree_level": 1,
+      "path": 2,
+      "specialization": 6.0,
+      "description": "הנדסה כימית משולב לתואר כפול - כימיה וננוטכנולוגיה, הנדסה כימית"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 363,
+      "degree_level": 1,
+      "path": 1,
+      "specialization": "",
+      "description": "הנדסה כימית חד מחלקתי"
+    }
+  ],
+  "הנדסת תעשיה וניהול": [
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 364,
+      "degree_level": 2,
+      "path": 2,
+      "specialization": 35.0,
+      "description": "הנדסת תעשיה וניהול חד מחלקתי עם סמינר מסכם -  סטטיסטיקה שימושית"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 364,
+      "degree_level": 2,
+      "path": 2,
+      "specialization": 36.0,
+      "description": "הנדסת תעשיה וניהול חד מחלקתי עם סמינר מסכם - חקר ביצועים ואלגוריתמיקה"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 364,
+      "degree_level": 2,
+      "path": 2,
+      "specialization": 52.0,
+      "description": "הנדסת תעשיה וניהול חד מחלקתי עם סמינר מסכם - מדעי הנתונים"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 364,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": 34.0,
+      "description": "הנדסת תעשיה וניהול חד מחלקתי עם עבודת גמר (תיזה) - בטיחות בדרכים"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 364,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": 35.0,
+      "description": "הנדסת תעשיה וניהול חד מחלקתי עם עבודת גמר (תיזה) -  סטטיסטיקה שימושית"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 364,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": 33.0,
+      "description": "הנדסת תעשיה וניהול חד מחלקתי עם עבודת גמר (תיזה) - מערכות מידע"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 364,
+      "degree_level": 2,
+      "path": 2,
+      "specialization": 34.0,
+      "description": "הנדסת תעשיה וניהול חד מחלקתי עם סמינר מסכם - בטיחות בדרכים"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 364,
+      "degree_level": 2,
+      "path": 2,
+      "specialization": 33.0,
+      "description": "הנדסת תעשיה וניהול חד מחלקתי עם סמינר מסכם - מערכות מידע"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 364,
+      "degree_level": 2,
+      "path": 2,
+      "specialization": 30.0,
+      "description": "הנדסת תעשיה וניהול חד מחלקתי עם סמינר מסכם - מערכות נבונות"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 364,
+      "degree_level": 2,
+      "path": 2,
+      "specialization": 29.0,
+      "description": "הנדסת תעשיה וניהול חד מחלקתי עם סמינר מסכם - גורמי-אנוש"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 364,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": 52.0,
+      "description": "הנדסת תעשיה וניהול חד מחלקתי עם עבודת גמר (תיזה) - מדעי הנתונים"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 364,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": 36.0,
+      "description": "הנדסת תעשיה וניהול חד מחלקתי עם עבודת גמר (תיזה) - חקר ביצועים ואלגוריתמיקה"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 364,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": 29.0,
+      "description": "הנדסת תעשיה וניהול חד מחלקתי עם עבודת גמר (תיזה) - גורמי-אנוש"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 364,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": 30.0,
+      "description": "הנדסת תעשיה וניהול חד מחלקתי עם עבודת גמר (תיזה) - מערכות נבונות"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 364,
+      "degree_level": 1,
+      "path": 1,
+      "specialization": "",
+      "description": "הנדסת תעשיה וניהול חד מחלקתי"
+    }
+  ],
+  "הנדסת חומרים": [
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 365,
+      "degree_level": 2,
+      "path": 8,
+      "specialization": "",
+      "description": "הנדסת חומרים לימודי צבירה"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 365,
+      "degree_level": 2,
+      "path": 2,
+      "specialization": "",
+      "description": "הנדסת חומרים חד מחלקתי עם סמינר מסכם"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 365,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": "",
+      "description": "הנדסת חומרים חד מחלקתי עם עבודת גמר (תיזה)"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 365,
+      "degree_level": 1,
+      "path": 4,
+      "specialization": 34.0,
+      "description": "הנדסת חומרים משולב לתואר כפול - חומרים ומכונות"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 365,
+      "degree_level": 1,
+      "path": 2,
+      "specialization": 5.0,
+      "description": "הנדסת חומרים משולב לתואר כפול - פיסיקה - הנדסת חומרים"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 365,
+      "degree_level": 1,
+      "path": 1,
+      "specialization": "",
+      "description": "הנדסת חומרים חד מחלקתי"
+    }
+  ],
+  "הנדסה גרעינית": [
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 366,
+      "degree_level": 2,
+      "path": 8,
+      "specialization": "",
+      "description": "הנדסה גרעינית לימודי צבירה"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 366,
+      "degree_level": 2,
+      "path": 2,
+      "specialization": "",
+      "description": "הנדסה גרעינית חד מחלקתי עם סמינר מסכם"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 366,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": "",
+      "description": "הנדסה גרעינית חד מחלקתי עם עבודת גמר (תיזה)"
+    }
+  ],
+  "הנדסה ביו-רפואית": [
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 367,
+      "degree_level": 2,
+      "path": 8,
+      "specialization": "",
+      "description": "הנדסה ביו-רפואית לימודי צבירה"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 367,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": "",
+      "description": "הנדסה ביו-רפואית חד מחלקתי עם עבודת גמר (תיזה)"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 367,
+      "degree_level": 1,
+      "path": 1,
+      "specialization": "",
+      "description": "הנדסה ביו-רפואית חד מחלקתי"
+    }
+  ],
+  "הנדסת ביוטכנולוגיה": [
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 369,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": "",
+      "description": "הנדסת ביוטכנולוגיה חד מחלקתי עם עבודת גמר (תיזה)"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 369,
+      "degree_level": 2,
+      "path": 8,
+      "specialization": "",
+      "description": "הנדסת ביוטכנולוגיה לימודי צבירה"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 369,
+      "degree_level": 1,
+      "path": 1,
+      "specialization": "",
+      "description": "הנדסת ביוטכנולוגיה חד-מחלקתי"
+    }
+  ],
+  "הנדסת מערכות תקשורת": [
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 371,
+      "degree_level": 2,
+      "path": 8,
+      "specialization": "",
+      "description": "הנדסת מערכות תקשורת לימודי צבירה"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 371,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": "",
+      "description": "הנדסת מערכות תקשורת חד מחלקתי עם עבודת גמר (תיזה)"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 371,
+      "degree_level": 2,
+      "path": 2,
+      "specialization": "",
+      "description": "הנדסת מערכות תקשורת חד מחלקתי עם סמינר מסכם"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 371,
+      "degree_level": 1,
+      "path": 1,
+      "specialization": "",
+      "description": "הנדסת מערכות תקשורת חד מחלקתי"
+    }
+  ],
+  "הנדסת מערכות מידע": [
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 372,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": 53.0,
+      "description": "הנדסת מערכות מידע חד מחלקתי עם עבודת גמר (תיזה) - רפואה חישובית"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 372,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": 52.0,
+      "description": "הנדסת מערכות מידע חד מחלקתי עם עבודת גמר (תיזה) - למידה חישובית וניתוח נתוני עתק"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 372,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": 50.0,
+      "description": "הנדסת מערכות מידע חד מחלקתי עם עבודת גמר (תיזה) - בינה מלאכותית ומערכות תכנה אוטונומיות"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 372,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": "",
+      "description": "הנדסת מערכות מידע חד מחלקתי עם עבודת גמר (תיזה)"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 372,
+      "degree_level": 2,
+      "path": 3,
+      "specialization": "",
+      "description": "הנדסת מערכות מידע אבטחת המרחב המקוון-בשיתוף עם מדעי המחשב"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 372,
+      "degree_level": 2,
+      "path": 8,
+      "specialization": 6.0,
+      "description": "הנדסת מערכות מידע לימודי צבירה - אבטחת המרחב המקוון-בשיתוף עם מדעי המחשב"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 372,
+      "degree_level": 2,
+      "path": 8,
+      "specialization": "",
+      "description": "הנדסת מערכות מידע לימודי צבירה"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 372,
+      "degree_level": 1,
+      "path": 1,
+      "specialization": 7.0,
+      "description": "הנדסת מערכות מידע חד מחלקתי - מסלול מותאם"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 372,
+      "degree_level": 1,
+      "path": 1,
+      "specialization": "",
+      "description": "הנדסת מערכות מידע חד מחלקתי"
+    }
+  ],
+  "הנדסת בניין": [
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 374,
+      "degree_level": 2,
+      "path": 8,
+      "specialization": "",
+      "description": "הנדסת בניין לימודי צבירה"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 374,
+      "degree_level": 2,
+      "path": 2,
+      "specialization": "",
+      "description": "הנדסת בניין חד מחלקתי עם סמינר מסכם"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 374,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": "",
+      "description": "הנדסת בניין חד מחלקתי עם עבודת גמר (תיזה)"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 374,
+      "degree_level": 1,
+      "path": 1,
+      "specialization": "",
+      "description": "הנדסת בניין חד מחלקתי"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 374,
+      "degree_level": 1,
+      "path": 3,
+      "specialization": 10.0,
+      "description": "הנדסת בניין משולב לתואר כפול - הנדסת בניין עם מדעי כדור הארץ והסביבה"
+    }
+  ],
+  "הנדסה סביבתית": [
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 376,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": "",
+      "description": "הנדסה סביבתית חד מחלקתי עם עבודת גמר (תיזה)"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 376,
+      "degree_level": 2,
+      "path": 8,
+      "specialization": "",
+      "description": "הנדסה סביבתית לימודי צבירה"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 376,
+      "degree_level": 2,
+      "path": 2,
+      "specialization": "",
+      "description": "הנדסה סביבתית חד מחלקתי עם סמינר מסכם"
+    }
+  ],
+  "הנדסה אלקטרו-אופטית": [
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 377,
+      "degree_level": 2,
+      "path": 8,
+      "specialization": "",
+      "description": "הנדסה אלקטרו-אופטית לימודי  צבירה"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 377,
+      "degree_level": 2,
+      "path": 2,
+      "specialization": "",
+      "description": "הנדסה אלקטרו-אופטית חד מחלקתי עם סמינר מסכם"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 377,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": "",
+      "description": "הנדסה אלקטרו-אופטית חד מחלקתי עם עבודת גמר (תיזה)"
+    }
+  ],
+  "הנדסת אנרגיה": [
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 378,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": "",
+      "description": "הנדסת אנרגיה חד מחלקתי עם עבודת גמר (תיזה)"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 378,
+      "degree_level": 2,
+      "path": 2,
+      "specialization": "",
+      "description": "הנדסת אנרגיה חד מחלקתי עם סמינר מסכם"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 378,
+      "degree_level": 2,
+      "path": 8,
+      "specialization": "",
+      "description": "הנדסת אנרגיה לימודי צבירה"
+    }
+  ],
+  "מכטרוניקה": [
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 379,
+      "degree_level": 2,
+      "path": 8,
+      "specialization": "",
+      "description": "מכטרוניקה לימודי צבירה"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 379,
+      "degree_level": 2,
+      "path": 2,
+      "specialization": "",
+      "description": "מכטרוניקה חד מחלקתי עם סמינר מסכם"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 379,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": "",
+      "description": "מכטרוניקה חד מחלקתי עם עבודת גמר (תיזה)"
+    }
+  ],
+  "הנדסת מערכות": [
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 383,
+      "degree_level": 2,
+      "path": 2,
+      "specialization": "",
+      "description": "הנדסת מערכות חד מחלקתי עם סמינר מסכם"
+    }
+  ],
+  "מדעי הרפואה": [
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 470,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": 11.0,
+      "description": "מדעי הרפואה עם תיזה - פרמקולוגיה"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 470,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": 14.0,
+      "description": "מדעי הרפואה עם תיזה - גנטיקה התפתחותית"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 470,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": 21.0,
+      "description": "מדעי הרפואה עם תיזה - אפידמיולוגיה - מדעי נתונים רפואיים"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 470,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": 1.0,
+      "description": "מדעי הרפואה עם תיזה - אפידמיולוגיה"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 470,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": 9.0,
+      "description": "מדעי הרפואה עם תיזה - פיזיולוגיה"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 470,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": 3.0,
+      "description": "מדעי הרפואה עם תיזה - וירולוגיה"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 470,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": 6.0,
+      "description": "מדעי הרפואה עם תיזה - מיקרוביולוגיה ואימונולוגיה"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 470,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": 8.0,
+      "description": "מדעי הרפואה עם תיזה - סוציולוגיה של הבריאות"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 470,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": 2.0,
+      "description": "מדעי הרפואה עם תיזה - ביוכימיה קלינית"
+    }
+  ],
+  "מדעי האחיות (סיעוד)": [
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 472,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": 10.0,
+      "description": "מדעי האחיות (סיעוד) חד-מחלקתי -  הסבת אקדמאים לאחיות"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 472,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": "",
+      "description": "מדעי האחיות (סיעוד) חד-מחלקתי"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 472,
+      "degree_level": 1,
+      "path": 1,
+      "specialization": "",
+      "description": "מדעי האחיות (סיעוד) חד-מחלקתי"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 4,
+      "department": 472,
+      "degree_level": 1,
+      "path": 1,
+      "specialization": "",
+      "description": "מדעי האחיות (סיעוד) חד-מחלקתי - קמפוס אילת"
+    }
+  ],
+  "פיזיותרפיה": [
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 473,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": 3.0,
+      "description": "פיזיותרפיה ללא עבודת גמר - שיקום"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 473,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": 4.0,
+      "description": "פיזיותרפיה ללא עבודת גמר - אורתוטיקה ופרוסתטיקה"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 473,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": "",
+      "description": "פיזיותרפיה ללא עבודת גמר"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 473,
+      "degree_level": 2,
+      "path": 2,
+      "specialization": "",
+      "description": "פיזיותרפיה עם עבודת גמר"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 473,
+      "degree_level": 2,
+      "path": 2,
+      "specialization": 3.0,
+      "description": "פיזיותרפיה עם עבודת גמר - שיקום"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 473,
+      "degree_level": 1,
+      "path": 1,
+      "specialization": "",
+      "description": "פיזיותרפיה חד-מחלקתי"
+    }
+  ],
+  "מדיניות וניהול  מערכות בריאות": [
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 480,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": 8.0,
+      "description": "מדיניות וניהול  מערכות בריאות ללא עבודת גמר - כלכלת בריאות"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 480,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": "",
+      "description": "מדיניות וניהול  מערכות בריאות ללא עבודת גמר"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 480,
+      "degree_level": 2,
+      "path": 2,
+      "specialization": 22.0,
+      "description": "מדיניות וניהול  מערכות בריאות עם עבודת גמר - ניהול מערכות בריאות לתלמידי רפואה"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 4,
+      "department": 480,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": "",
+      "description": "מדיניות וניהול  מערכות בריאות ללא עבודת גמר - קמפוס אילת"
+    }
+  ],
+  "לימודי זקנה - גרונטולוגיה": [
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 482,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": 2.0,
+      "description": "לימודי זקנה - גרונטולוגיה חד מחלקתי-ללא תיזה - ניהול שירותים לזקנים"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 482,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": 3.0,
+      "description": "לימודי זקנה - גרונטולוגיה חד מחלקתי-ללא תיזה - ניהול טיפול"
+    }
+  ],
+  "בריאות הציבור": [
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 483,
+      "degree_level": 2,
+      "path": 2,
+      "specialization": "",
+      "description": "בריאות הציבור מסלול קליני"
+    }
+  ],
+  "רוקחות": [
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 484,
+      "degree_level": 2,
+      "path": 2,
+      "specialization": 1.0,
+      "description": "רוקחות קליני - רוקחות קלינית קהילתית וניהול רגולטורי"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 484,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": 1.0,
+      "description": "רוקחות מחקרי - רוקחות קלינית קהילתית וניהול רגולטורי"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 484,
+      "degree_level": 1,
+      "path": 1,
+      "specialization": "",
+      "description": "רוקחות חד מחלקתי"
+    }
+  ],
+  "רפואת חירום": [
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 485,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": 1.0,
+      "description": "רפואת חירום ללא עבודת גמר - מוכנות ומענה למצבי חירום ואסון"
+    }
+  ],
+  "ניהול תיירות ופנאי": [
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 682,
+      "degree_level": 2,
+      "path": 3,
+      "specialization": "",
+      "description": "ניהול תיירות ופנאי ללא עבודת גמר-מרוכז"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 682,
+      "degree_level": 1,
+      "path": 1,
+      "specialization": "",
+      "description": "ניהול תיירות ופנאי חד מחלקתי"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 682,
+      "degree_level": 1,
+      "path": 3,
+      "specialization": "",
+      "description": "ניהול תיירות ופנאי ראשי"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 682,
+      "degree_level": 1,
+      "path": 2,
+      "specialization": "",
+      "description": "ניהול תיירות ופנאי דו מחלקתי"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 4,
+      "department": 682,
+      "degree_level": 1,
+      "path": 1,
+      "specialization": "",
+      "description": "ניהול תיירות ופנאי חד מחלקתי - קמפוס אילת"
+    }
+  ],
+  "ניהול ומדיניות ציבורית": [
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 685,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": "",
+      "description": "ניהול ומדיניות ציבורית ללא עבודת גמר"
+    }
+  ],
+  "מנהל עסקים": [
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 687,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": 32.0,
+      "description": "מנהל עסקים ללא עבודת גמר - MBA בניתוח ועיצוב התנהגותי"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 687,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": 34.0,
+      "description": "מנהל עסקים ללא עבודת גמר - MBA בפרספקטיבה רב-תחומית"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 687,
+      "degree_level": 2,
+      "path": 6,
+      "specialization": "",
+      "description": "מנהל עסקים IMBA"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 687,
+      "degree_level": 2,
+      "path": 5,
+      "specialization": "",
+      "description": "מנהל עסקים מנהלים -ללא עבודת גמר"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 687,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": 31.0,
+      "description": "מנהל עסקים ללא עבודת גמר - MBA בשיווק וייעוץ אסטרטגי"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 687,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": 30.0,
+      "description": "מנהל עסקים ללא עבודת גמר - MBA במימון ואקטואריה"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 687,
+      "degree_level": 2,
+      "path": 4,
+      "specialization": 20.0,
+      "description": "מנהל עסקים ללא עבודת גמר - מנהיגות חברתית"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 687,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": 33.0,
+      "description": "מנהל עסקים ללא עבודת גמר - MBA  בחדשנות ויזמות היי-טק"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 4,
+      "department": 687,
+      "degree_level": 2,
+      "path": 1,
+      "specialization": 31.0,
+      "description": "מנהל עסקים ללא עבודת גמר - MBA בשיווק וייעוץ אסטרטגי - קמפוס אילת"
+    }
+  ],
+  "הכשרת מורים": [
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 130,
+      "degree_level": 4,
+      "path": 2,
+      "specialization": "",
+      "description": "הכשרת מורים חד שנתי"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 0,
+      "department": 130,
+      "degree_level": 4,
+      "path": 1,
+      "specialization": "",
+      "description": "הכשרת מורים דו שנתי"
+    },
+    {
+      "sheet": "תואר 2",
+      "institution": 4,
+      "department": 130,
+      "degree_level": 4,
+      "path": 2,
+      "specialization": "",
+      "description": "הכשרת מורים חד שנתי - קמפוס אילת"
+    }
+  ],
+  "אמנויות": [
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 134,
+      "degree_level": 1,
+      "path": 2,
+      "specialization": 2.0,
+      "description": "אמנויות דו מחלקתי - אמנות חזותית : תכנית משולבת בתולדות האמנות ולימודי יצירה"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 134,
+      "degree_level": 1,
+      "path": 2,
+      "specialization": 1.0,
+      "description": "אמנויות דו מחלקתי - תולדות האמנות"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 4,
+      "department": 134,
+      "degree_level": 1,
+      "path": 2,
+      "specialization": 2.0,
+      "description": "אמנויות דו מחלקתי - אמנות חזותית : תכנית משולבת בתולדות האמנות ולימודי יצירה - קמפוס אילת"
+    }
+  ],
+  "מדעי ההתנהגות": [
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 141,
+      "degree_level": 1,
+      "path": 1,
+      "specialization": "",
+      "description": "מדעי ההתנהגות חד מחלקתי"
+    }
+  ],
+  "לימודים רב תחומיים": [
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 147,
+      "degree_level": 1,
+      "path": 2,
+      "specialization": "",
+      "description": "לימודים רב תחומיים דו מחלקתי"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 147,
+      "degree_level": 1,
+      "path": 3,
+      "specialization": "",
+      "description": "לימודים רב תחומיים מדעי החברה"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 147,
+      "degree_level": 1,
+      "path": 1,
+      "specialization": "",
+      "description": "לימודים רב תחומיים מדעי הרוח"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 4,
+      "department": 147,
+      "degree_level": 1,
+      "path": 2,
+      "specialization": "",
+      "description": "לימודים רב תחומיים דו מחלקתי - קמפוס אילת"
+    }
+  ],
+  "אמנות יצירה": [
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 155,
+      "degree_level": 1,
+      "path": 1,
+      "specialization": 11.0,
+      "description": "אמנות יצירה חטיבה מורחבת - שילוב מדעי הטבע"
+    }
+  ],
+  "מוזיקה": [
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 184,
+      "degree_level": 1,
+      "path": 2,
+      "specialization": "",
+      "description": "מוזיקה חטיבה מורחבת"
+    }
+  ],
+  "קיימות ושמירת סביבה": [
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 220,
+      "degree_level": 1,
+      "path": 2,
+      "specialization": "",
+      "description": "קיימות ושמירת סביבה דו מחלקתי"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 220,
+      "degree_level": 1,
+      "path": 1,
+      "specialization": "",
+      "description": "קיימות ושמירת סביבה קיימות וסביבה- חטיבה"
+    }
+  ],
+  "סטטיסטיקה וניתוח נתונים": [
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 243,
+      "degree_level": 1,
+      "path": 2,
+      "specialization": "",
+      "description": "סטטיסטיקה וניתוח נתונים דו מחלקתי"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 243,
+      "degree_level": 1,
+      "path": 2,
+      "specialization": 20.0,
+      "description": "סטטיסטיקה וניתוח נתונים דו מחלקתי - שילוב עם כימיה"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 243,
+      "degree_level": 1,
+      "path": 2,
+      "specialization": 7.0,
+      "description": "סטטיסטיקה וניתוח נתונים דו מחלקתי - שילוב עם מדעי כדור הארץ והסביבה"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 243,
+      "degree_level": 1,
+      "path": 2,
+      "specialization": 6.0,
+      "description": "סטטיסטיקה וניתוח נתונים דו מחלקתי - שילוב עם מדעי החיים"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 243,
+      "degree_level": 1,
+      "path": 2,
+      "specialization": 5.0,
+      "description": "סטטיסטיקה וניתוח נתונים דו מחלקתי - מתמטיקה"
+    }
+  ],
+  "הנדסת תכנה": [
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 373,
+      "degree_level": 1,
+      "path": 1,
+      "specialization": 3.0,
+      "description": "הנדסת תכנה חד מחלקתי - תכנית פסגות"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 373,
+      "degree_level": 1,
+      "path": 1,
+      "specialization": 1.0,
+      "description": "הנדסת תכנה חד מחלקתי - 1"
+    }
+  ],
+  "הנדסת מחשבים": [
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 381,
+      "degree_level": 1,
+      "path": 1,
+      "specialization": "",
+      "description": "הנדסת מחשבים חד מחלקתי"
+    }
+  ],
+  "הנדסת נתונים": [
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 382,
+      "degree_level": 1,
+      "path": 1,
+      "specialization": "",
+      "description": "הנדסת נתונים חד מחלקתי"
+    }
+  ],
+  "מדעי המעבדה הרפואית": [
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 477,
+      "degree_level": 1,
+      "path": 1,
+      "specialization": "",
+      "description": "מדעי המעבדה הרפואית חד-מחלקתי"
+    }
+  ],
+  "רפואת חרום": [
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 478,
+      "degree_level": 1,
+      "path": 1,
+      "specialization": "",
+      "description": "רפואת חרום חד-מחלקתי"
+    }
+  ],
+  "השלמה לרפואת חרום": [
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 479,
+      "degree_level": 1,
+      "path": 1,
+      "specialization": "",
+      "description": "השלמה לרפואת חרום חד-מחלקתי"
+    }
+  ],
+  "ריפוי בעיסוק": [
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 486,
+      "degree_level": 1,
+      "path": 1,
+      "specialization": "",
+      "description": "ריפוי בעיסוק חד מחלקתי"
+    }
+  ],
+  "הסבת אקדמאיים לאחיות (סיעוד)": [
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 487,
+      "degree_level": 1,
+      "path": 1,
+      "specialization": "",
+      "description": "הסבת אקדמאיים לאחיות (סיעוד) חד מחלקתי"
+    }
+  ],
+  "ניהול": [
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 681,
+      "degree_level": 1,
+      "path": 5,
+      "specialization": "",
+      "description": "ניהול דו מחלקתי דו שנתי"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 681,
+      "degree_level": 1,
+      "path": 18,
+      "specialization": "",
+      "description": "ניהול ניהול מערכות מידע"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 681,
+      "degree_level": 1,
+      "path": 13,
+      "specialization": 300.0,
+      "description": "ניהול חטיבה - עם מוח קוגניציה ראשי"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 681,
+      "degree_level": 1,
+      "path": 2,
+      "specialization": "",
+      "description": "ניהול דו מחלקתי"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 681,
+      "degree_level": 1,
+      "path": 2,
+      "specialization": 48.0,
+      "description": "ניהול דו מחלקתי - מדעי המחשב"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 681,
+      "degree_level": 1,
+      "path": 2,
+      "specialization": 40.0,
+      "description": "ניהול דו מחלקתי - מדעי החיים"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 681,
+      "degree_level": 1,
+      "path": 1,
+      "specialization": 12.0,
+      "description": "ניהול חד מחלקתי - שיווק"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 681,
+      "degree_level": 1,
+      "path": 1,
+      "specialization": 11.0,
+      "description": "ניהול חד מחלקתי - מימון"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 681,
+      "degree_level": 1,
+      "path": 1,
+      "specialization": 10.0,
+      "description": "ניהול חד מחלקתי - התנהגות ארגונית וניהול משאבי אנוש"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 681,
+      "degree_level": 1,
+      "path": 1,
+      "specialization": 9.0,
+      "description": "ניהול חד מחלקתי - יזמות וחדשנות"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 4,
+      "department": 681,
+      "degree_level": 1,
+      "path": 2,
+      "specialization": "",
+      "description": "ניהול דו מחלקתי - קמפוס אילת"
+    }
+  ],
+  "ניהול מערכות בריאות": [
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 686,
+      "degree_level": 1,
+      "path": 2,
+      "specialization": "",
+      "description": "ניהול מערכות בריאות דו מחלקתי"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 686,
+      "degree_level": 1,
+      "path": 1,
+      "specialization": "",
+      "description": "ניהול מערכות בריאות חד מחלקתי"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 686,
+      "degree_level": 1,
+      "path": 1,
+      "specialization": 5.0,
+      "description": "ניהול מערכות בריאות חד מחלקתי - ניהול מחקרים קליניים"
+    }
+  ],
+  "יזמות וחדשנות": [
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 689,
+      "degree_level": 1,
+      "path": 2,
+      "specialization": "",
+      "description": "יזמות וחדשנות דו מחלקתי"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 689,
+      "degree_level": 1,
+      "path": 2,
+      "specialization": 48.0,
+      "description": "יזמות וחדשנות דו מחלקתי - מדעי המחשב"
+    }
+  ],
+  "רפואה על שם ג'ויס וארוינג גולדמן": [
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 471,
+      "degree_level": 8,
+      "path": 1,
+      "specialization": "",
+      "description": "רפואה על שם ג'ויס וארוינג גולדמן חד-מחלקתי"
+    }
+  ],
+  "רפואה ארבע שנתית": [
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 491,
+      "degree_level": 8,
+      "path": 2,
+      "specialization": "",
+      "description": "רפואה ארבע שנתית משולב עם ד\"ר לפילוסופיה"
+    },
+    {
+      "sheet": "תואר 1",
+      "institution": 0,
+      "department": 491,
+      "degree_level": 8,
+      "path": 1,
+      "specialization": "",
+      "description": "רפואה ארבע שנתית חד מחלקתי"
+    }
+  ],
+  "הנדסה שנה א'": [
+    {
+      "sheet": "תואר 1",
+      "institution": 4,
+      "department": 370,
+      "degree_level": 1,
+      "path": 1,
+      "specialization": "",
+      "description": "הנדסה שנה א' חד-מחלקתי - קמפוס אילת"
+    }
+  ]
+}
