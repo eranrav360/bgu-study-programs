@@ -4582,16 +4582,21 @@
 
         function displayPrograms(departmentName) {
             const resultsDiv = document.getElementById('results');
-            let programs = programsData[departmentName];
+            let allPrograms = programsData[departmentName];
 
-            if (!programs || programs.length === 0) {
+            if (!allPrograms || allPrograms.length === 0) {
                 resultsDiv.innerHTML = '<div class="no-results">לא נמצאו תכניות</div>';
                 return;
             }
 
+            // Count programs by type (before filtering)
+            const baCount = allPrograms.filter(p => p.sheet === 'תואר 1').length;
+            const maCount = allPrograms.filter(p => p.sheet === 'תואר 2').length;
+
             // Filter by current filter
+            let programs = allPrograms;
             if (currentFilter !== 'all') {
-                programs = programs.filter(p => p.sheet === currentFilter);
+                programs = allPrograms.filter(p => p.sheet === currentFilter);
             }
 
             if (programs.length === 0) {
@@ -4601,7 +4606,15 @@
 
             // Get department number from first program
             const deptNumber = programs[0].department;
-            const displayName = deptNumber ? `${departmentName} (${deptNumber})` : departmentName;
+            let displayName = deptNumber ? `${departmentName} (${deptNumber})` : departmentName;
+
+            // Add program counts
+            const countsText = [];
+            if (baCount > 0) countsText.push(`${baCount} תואר ראשון`);
+            if (maCount > 0) countsText.push(`${maCount} תואר שני`);
+            if (countsText.length > 0) {
+                displayName += ` - ${countsText.join(', ')}`;
+            }
 
             let html = `<div class="department-name">${displayName}</div>`;
 
