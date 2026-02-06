@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>תכניות תואר ראשון - אוניברסיטת בן גוריון</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            direction: rtl;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 40px;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 2.2em;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+
+        .filter-container {
+            display: none;
+        }
+
+        .filter-btn {
+            padding: 10px 25px;
+            border: 2px solid #667eea;
+            background: white;
+            color: #667eea;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .filter-btn:hover {
+            background: #f8f9ff;
+        }
+
+        .filter-btn.active {
+            background: #667eea;
+            color: white;
+        }
+
+        .search-container {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        #searchInput {
+            width: 100%;
+            padding: 15px 20px;
+            font-size: 18px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            transition: all 0.3s;
+            direction: rtl;
+        }
+
+        #searchInput:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .autocomplete-items {
+            position: absolute;
+            border: 1px solid #ddd;
+            border-top: none;
+            z-index: 99;
+            top: 100%;
+            right: 0;
+            left: 0;
+            background: white;
+            max-height: 300px;
+            overflow-y: auto;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .autocomplete-items div {
+            padding: 12px 20px;
+            cursor: pointer;
+            border-bottom: 1px solid #f0f0f0;
+            transition: background 0.2s;
+        }
+
+        .autocomplete-items div:hover {
+            background-color: #f8f9ff;
+        }
+
+        .autocomplete-active {
+            background-color: #667eea !important;
+            color: white;
+        }
+
+        .stats {
+            background: #f8f9ff;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #555;
+        }
+
+        .results {
+            margin-top: 30px;
+        }
+
+        .department-name {
+            font-size: 1.8em;
+            color: #667eea;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .program-card {
+            background: #f8f9ff;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            border-right: 4px solid #667eea;
+            transition: transform 0.2s, box-shadow 0.2s;
+            position: relative;
+        }
+
+        .program-card:hover {
+            transform: translateX(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .program-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: #667eea;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            font-weight: 500;
+        }
+
+        .program-badge.ba {
+            background: #667eea;
+        }
+
+        .program-badge.ma {
+            background: #764ba2;
+        }
+
+        .program-description {
+            font-size: 1.1em;
+            color: #333;
+            margin-bottom: 12px;
+            font-weight: 500;
+            padding-left: 80px;
+        }
+
+        .program-details {
+            font-size: 0.95em;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        .program-details span {
+            display: inline-block;
+            margin-left: 15px;
+            padding: 4px 10px;
+            background: white;
+            border-radius: 5px;
+            margin-bottom: 5px;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 40px;
+            color: #999;
+            font-size: 1.2em;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 20px;
+            color: #667eea;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 1.6em;
+            }
+
+            .program-description {
+                padding-left: 0;
+                margin-top: 35px;
+            }
+
+            .program-badge {
+                top: 10px;
+                left: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎓 תכניות תואר ראשון</h1>
+        <div class="subtitle">אוניברסיטת בן גוריון בנגב</div>
+
+        <div class="filter-container">
+            <button class="filter-btn active" data-filter="all">הכל</button>
+            <button class="filter-btn" data-filter="תואר 1">תואר ראשון</button>
+            <button class="filter-btn" data-filter="תואר 2">תואר שני</button>
+        </div>
+
+        <div class="stats" id="stats">
+            <div class="loading">טוען נתונים...</div>
+        </div>
+
+        <div class="search-container">
+            <input type="text"
+                   id="searchInput"
+                   placeholder="הקלד שם מחלקה לחיפוש..."
+                   autocomplete="off">
+            <div id="autocompleteList" class="autocomplete-items"></div>
+        </div>
+
+        <div id="results" class="results"></div>
+    </div>
+
+    <script>
+        let programsData = {};
+        let departmentsList = [];
+        let currentFilter = 'תואר 1';
+        let currentDepartment = null;
+
+        // Load data
+        fetch('programs_data.json')
+            .then(response => response.json())
+            .then(data => {
+                programsData = data;
+                departmentsList = Object.keys(data).sort();
+
+                updateStats();
+                setupAutocomplete();
+                setupFilters();
+            })
+            .catch(error => {
+                console.error('Error loading data:', error);
+                document.getElementById('stats').innerHTML = 'שגיאה בטעינת הנתונים';
+            });
+
+        function updateStats() {
+            let baCount = 0;
+
+            Object.values(programsData).forEach(programs => {
+                programs.forEach(program => {
+                    if (program.sheet === 'תואר 1') baCount++;
+                });
+            });
+
+            let statsHtml = `<strong>${departmentsList.length}</strong> מחלקות | `;
+            statsHtml += `<strong>${baCount}</strong> תכניות תואר ראשון`;
+
+            document.getElementById('stats').innerHTML = statsHtml;
+        }
+
+        function setupFilters() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+
+                    currentFilter = this.dataset.filter;
+                    updateStats();
+
+                    if (currentDepartment) {
+                        displayPrograms(currentDepartment);
+                    }
+                });
+            });
+        }
+
+        function setupAutocomplete() {
+            const input = document.getElementById('searchInput');
+            const autocompleteList = document.getElementById('autocompleteList');
+            let currentFocus = -1;
+
+            input.addEventListener('input', function() {
+                const value = this.value;
+                closeAllLists();
+
+                if (!value) {
+                    document.getElementById('results').innerHTML = '';
+                    currentDepartment = null;
+                    return;
+                }
+
+                currentFocus = -1;
+                const matches = departmentsList.filter(dept =>
+                    dept.includes(value)
+                );
+
+                if (matches.length === 0) {
+                    document.getElementById('results').innerHTML =
+                        '<div class="no-results">לא נמצאו תוצאות</div>';
+                    return;
+                }
+
+                matches.forEach(dept => {
+                    const div = document.createElement('div');
+
+                    const index = dept.indexOf(value);
+                    div.innerHTML = dept.substr(0, index) +
+                                  '<strong>' + dept.substr(index, value.length) + '</strong>' +
+                                  dept.substr(index + value.length);
+
+                    div.addEventListener('click', function() {
+                        input.value = dept;
+                        closeAllLists();
+                        currentDepartment = dept;
+                        displayPrograms(dept);
+                    });
+
+                    autocompleteList.appendChild(div);
+                });
+
+                if (matches.length === 1) {
+                    currentDepartment = matches[0];
+                    displayPrograms(matches[0]);
+                }
+            });
+
+            input.addEventListener('keydown', function(e) {
+                let items = autocompleteList.getElementsByTagName('div');
+
+                if (e.keyCode === 40) {
+                    currentFocus++;
+                    addActive(items);
+                } else if (e.keyCode === 38) {
+                    currentFocus--;
+                    addActive(items);
+                } else if (e.keyCode === 13) {
+                    e.preventDefault();
+                    if (currentFocus > -1 && items[currentFocus]) {
+                        items[currentFocus].click();
+                    }
+                }
+            });
+
+            function addActive(items) {
+                if (!items) return false;
+                removeActive(items);
+                if (currentFocus >= items.length) currentFocus = 0;
+                if (currentFocus < 0) currentFocus = items.length - 1;
+                items[currentFocus].classList.add('autocomplete-active');
+            }
+
+            function removeActive(items) {
+                for (let item of items) {
+                    item.classList.remove('autocomplete-active');
+                }
+            }
+
+            function closeAllLists() {
+                autocompleteList.innerHTML = '';
+            }
+
+            document.addEventListener('click', function(e) {
+                if (e.target !== input) {
+                    closeAllLists();
+                }
+            });
+        }
+
+        function displayPrograms(departmentName) {
+            const resultsDiv = document.getElementById('results');
+            let allPrograms = programsData[departmentName];
+
+            if (!allPrograms || allPrograms.length === 0) {
+                resultsDiv.innerHTML = '<div class="no-results">לא נמצאו תכניות</div>';
+                return;
+            }
+
+            // Filter to show only Bachelor programs
+            let programs = allPrograms.filter(p => p.sheet === 'תואר 1');
+
+            if (programs.length === 0) {
+                resultsDiv.innerHTML = '<div class="no-results">לא נמצאו תכניות תואר ראשון במחלקה זו</div>';
+                return;
+            }
+
+            // Get department number from first program
+            const deptNumber = programs[0].department;
+            let displayName = deptNumber ? `${departmentName} (${deptNumber})` : departmentName;
+
+            // Add program count for Bachelor only
+            if (programs.length > 0) {
+                displayName += ` - ${programs.length} תכנית${programs.length > 1 ? 'ות' : ''}`;
+            }
+
+            let html = `<div class="department-name">${displayName}</div>`;
+
+            programs.forEach(program => {
+                const badgeClass = program.sheet === 'תואר 1' ? 'ba' : 'ma';
+                let badgeText = program.sheet === 'תואר 1' ? 'תואר ראשון' : 'תואר שני';
+
+                // Add Eilat campus indicator if institution is 4
+                if (program.institution == 4) {
+                    badgeText += ' - קמפוס אילת';
+                }
+
+                html += `
+                    <div class="program-card">
+                        <div class="program-badge ${badgeClass}">${badgeText}</div>
+                        <div class="program-description">${program.description}</div>
+                        <div class="program-details">
+                            ${program.degree_level ? `<span>📚 ${program.degree_level}</span>` : ''}
+                            ${program.path ? `<span>🎯 ${program.path}</span>` : ''}
+                            ${program.specialization ? `<span>⭐ ${program.specialization}</span>` : ''}
+                        </div>
+                    </div>
+                `;
+            });
+
+            resultsDiv.innerHTML = html;
+        }
+    </script>
+</body>
+</html>
