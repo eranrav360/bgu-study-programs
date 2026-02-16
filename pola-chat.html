@@ -48,12 +48,8 @@
         .header-title { color: white; font-weight: bold; font-size: 16px; }
         .header-subtitle { color: #fed7aa; font-size: 12px; }
         .header-badge {
-            background: rgba(255,255,255,0.2);
-            padding: 4px 12px; border-radius: 20px;
-            color: white; font-size: 12px;
-            display: none;
+            display: none !important; /* Hidden for natural conversation flow */
         }
-        .header-badge.visible { display: block; }
 
         /* Chat Area */
         .chat-area {
@@ -108,21 +104,9 @@
         .topic-btn:hover { border-color: #fb923c; background: #fff7ed; transform: scale(1.02); }
         .topic-btn .icon { font-size: 18px; }
 
-        .topic-btn-small {
-            display: inline-flex; align-items: center; gap: 4px;
-            padding: 4px 10px; font-size: 12px;
-            background: rgba(255,255,255,0.8); border: 1px solid #fed7aa;
-            border-radius: 20px; color: #6b7280; cursor: pointer;
-            transition: all 0.2s; font-family: inherit;
-        }
-        .topic-btn-small:hover { background: #fff7ed; color: #ea580c; transform: scale(1.05); }
-
-        .other-topics {
-            margin-top: 12px; padding-top: 12px;
-            border-top: 1px solid rgba(253,186,116,0.3);
-            display: flex; flex-wrap: wrap; gap: 6px;
-        }
-        .other-topics-label { font-size: 11px; color: #9ca3af; width: 100%; margin-bottom: 4px; }
+        .topic-btn-small { display: none !important; } /* Hidden for natural conversation */
+        .other-topics { display: none !important; } /* Hidden for natural conversation */
+        .other-topics-label { display: none !important; } /* Hidden for natural conversation */
 
         /* Sub option buttons */
         .sub-option-btn {
@@ -457,7 +441,7 @@ function handleTopicSelect(topicId) {
     programSearchMode = false;
     admissionSearchMode = false;
     awaitingSubOption = null;
-    updateTopicBadge();
+    // updateTopicBadge(); // Removed for natural conversation flow
 
     // Remove existing search box
     const existing = document.getElementById('searchBox');
@@ -473,7 +457,7 @@ function handleTopicSelect(topicId) {
 
         if (topicId === 'programs') {
             programSearchMode = true;
-            chatArea.innerHTML += addPolaMessage(topicData.initial, createOtherTopicsHTML(topicId));
+            chatArea.innerHTML += addPolaMessage(topicData.initial, '');
             chatArea.innerHTML += showSearchBox();
             scrollToBottom();
             setTimeout(() => {
@@ -484,7 +468,7 @@ function handleTopicSelect(topicId) {
             awaitingSubOption = topicId;
             chatArea.innerHTML += addPolaMessage(topicData.initial, createSubOptionsHTML(topicId));
         } else {
-            chatArea.innerHTML += addPolaMessage(topicData.initial, createOtherTopicsHTML(topicId));
+            chatArea.innerHTML += addPolaMessage(topicData.initial, '');
         }
         scrollToBottom();
     }, 800);
@@ -506,7 +490,7 @@ function handleSubOptionSelect(subOptionId) {
 
         if (subOptionId === 'check_program') {
             admissionSearchMode = true;
-            chatArea.innerHTML += addPolaMessage(topicData.subResponses[subOptionId], createOtherTopicsHTML(currentTopic));
+            chatArea.innerHTML += addPolaMessage(topicData.subResponses[subOptionId], '');
             chatArea.innerHTML += showSearchBox();
             scrollToBottom();
             setTimeout(() => {
@@ -514,7 +498,7 @@ function handleSubOptionSelect(subOptionId) {
                 if (input) input.focus();
             }, 100);
         } else {
-            chatArea.innerHTML += addPolaMessage(topicData.subResponses[subOptionId], createOtherTopicsHTML(currentTopic));
+            chatArea.innerHTML += addPolaMessage(topicData.subResponses[subOptionId], '');
             scrollToBottom();
         }
     }, 800);
@@ -602,7 +586,7 @@ function handleProgramSelect(program) {
         if (program.admissionMode) {
             const deptName = program.dept || '';
             const responseText = `תנאי הקבלה למחלקה ל${deptName} באוניברסיטת בן-גוריון בנגב:\n\nכדי להתקבל למחלקה, עליך לעמוד באחת מהאפשרויות הבאות:\n\n<b>אפשרויות קבלה:</b>\n\nמתמטיקה 5 יחידות – ציון 87\nאו חלופות:\n\n• פסיכומטרי – חשיבה כמותית 137 ומעלה + מתמטיקה 5 יחידות בציון עובר\n\n• פסיכומטרי – חשיבה כמותית 127 ומעלה + פיזיקה 5 יחידות בציון 82 + מתמטיקה 5 יחידות בציון עובר\n\n• מתמטיקה 5 יחידות בציון 82 + פיזיקה 5 יחידות בציון 82\n\n• סכם כללי 700 + פסיכומטרי – חשיבה כמותית 127 ומעלה + מתמטיקה:\n  • 5 יחידות בציון 75 או\n  • 4 יחידות בציון 85\n\n<b>דרישות נוספות:</b>\n• אנגלית – רמה "בסיסי"\n• עברית – רמה ה' (למי שנדרש)\n\n<b>הערות חשובות:</b>\n• מועמדים עם 4 יחידות מתמטיקה וחשיבה כמותית 140 ומעלה יועברו לדיון במחלקה\n• ההרשמה לסמסטר ב' סגורה\n\nרוצה פרטים נוספים על התכנית או מידע על תכניות נוספות? 👇`;
-            chatArea.innerHTML += addPolaMessage(responseText, createOtherTopicsHTML('admission'));
+            chatArea.innerHTML += addPolaMessage(responseText, '');
 
             admissionSearchMode = true;
             chatArea.innerHTML += showSearchBox();
@@ -612,7 +596,7 @@ function handleProgramSelect(program) {
             const degreeType = program.s === 'תואר 1' ? 'B.Sc.' : 'M.Sc.';
             const durationText = program.s === 'תואר 1' ? '3 שנים' : '2 שנים';
             const responseText = `תכנית ${deptName} באוניברסיטת בן-גוריון בנגב\n\n<b>פרטי התואר:</b>\n• תואר: ${degreeType} ב${deptName}\n• קמפוס: ${campusText}\n• משך לימודים: ${durationText}\n• סטטוס רישום: סגור כרגע\n\n<b>אודות התכנית:</b>\nבית הספר למדעי המוח ולקוגניציה מעניק השכלה איכותית המכינה לקריירה מצליחה בתחום.\n\n<b>תחומי לימוד מרכזיים:</b>\n• חישוב קוגניטיבי\n• עיבוד מדדים קוגניטיביים ומוחיים\n• נוירוביולוגיה\n• פסיכולוגיה קוגניטיבית\n• מדעי העצב\n\n<b>תואר משולב - מדעי המוח והקוגניציה + מדעי המחשב:</b>\nחיבור אסטרטגי בין הבנת המוח האנושי לבין יכולות חישוביות מתקדמות:\n• למידת מכונה\n• בינה מלאכותית\n• ניתוח רשתות עצביות\n• פיתוח מודלים חישוביים\n\n<b>תעסוקה:</b>\nבוגרי התוכנית משתלבים בתפקידים מרתקים בתעשיות עתירות ידע. התחום צובר תאוצה בארץ ובעולם.\n\n<b>תוכנית ההתחל"ה:</b>\nתוכנית ייחודית המלווה סטודנטים בסמסטר הראשון - התנסות, הכנה, תגבור וחניכה.\n\n<b>יצירת קשר:</b> brain.school@bgu.ac.il\n\n🔗 <a href="https://www.bgu.ac.il" target="_blank" style="color:#2563eb;text-decoration:underline">${deptName} - אוניברסיטת בן-גוריון</a>\n\nרוצה פרטים נוספים על התכנית או מידע על תנאי הקבלה? 👇`;
-            chatArea.innerHTML += addPolaMessage(responseText, createOtherTopicsHTML('programs'));
+            chatArea.innerHTML += addPolaMessage(responseText, '');
 
             programSearchMode = true;
             chatArea.innerHTML += showSearchBox();
@@ -646,7 +630,7 @@ function detectIntent(text) {
 
 function handleQuestionnaireStart() {
     chatArea.innerHTML += addUserMessage('מעבר לשאלון התאמה');
-    chatArea.innerHTML += addPolaMessage('מעולה! 📝\n\nהשאלון יעזור לנו למצוא את התחומים המתאימים לך ביותר.\n\n🔗 <a href="https://www.bgu.ac.il/welcome/ba/questionnaire/" target="_blank" style="color:#2563eb;text-decoration:underline">מעבר לשאלון הולנד</a>', createOtherTopicsHTML('counseling'));
+    chatArea.innerHTML += addPolaMessage('מעולה! 📝\n\nהשאלון יעזור לנו למצוא את התחומים המתאימים לך ביותר.\n\n🔗 <a href="https://www.bgu.ac.il/welcome/ba/questionnaire/" target="_blank" style="color:#2563eb;text-decoration:underline">מעבר לשאלון הולנד</a>', '');
     scrollToBottom();
 }
 
@@ -671,9 +655,9 @@ function handleSendMessage() {
                 // Show Holland questionnaire prompt
                 const questionnaireText = 'יש לנו שאלון, המונה 30 שאלות, שיכול לסייע לך בזיהוי תחומים שמתאימים לך.\n\nהאם תרצה להתחיל?\n\nהשאלון מבוסס על מודל הולנד ויעזור לנו להתאים תוכניות לימוד על פי תחומי העניין והכישורים שלך.';
                 const questionnaireBtn = `<div class="buttons-container" style="margin-top:12px"><button class="topic-btn" onclick="handleQuestionnaireStart()"><span class="icon">📝</span><span>מעבר לשאלון התאמה</span></button></div>`;
-                chatArea.innerHTML += addPolaMessage(questionnaireText, questionnaireBtn + createOtherTopicsHTML(currentTopic));
+                chatArea.innerHTML += addPolaMessage(questionnaireText, questionnaireBtn + '');
             } else {
-                chatArea.innerHTML += addPolaMessage(topicResponses[currentTopic].followUp, createOtherTopicsHTML(currentTopic));
+                chatArea.innerHTML += addPolaMessage(topicResponses[currentTopic].followUp, '');
             }
 
             if (currentTopic === 'programs') {
