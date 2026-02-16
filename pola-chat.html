@@ -502,15 +502,9 @@ function handleTopicSelect(topicId) {
                 if (input) input.focus();
             }, 100);
         } else if (topicId === 'admission') {
-            // Special handling for admission - show semester selection
+            // Special handling for admission - ask for semester in text
             admissionFlowState = 'awaiting_semester';
-            const semesterButtons = `
-                <div class="buttons-container" style="margin-top:12px;display:flex;flex-direction:column;gap:8px;">
-                    <button class="topic-btn" onclick="handleSemesterChoice('אביב התשפ״ו')"><span class="icon">🌸</span><span>סמסטר אביב התשפ"ו</span></button>
-                    <button class="topic-btn" onclick="handleSemesterChoice('סתיו התשפ״ז')"><span class="icon">🍂</span><span>סמסטר סתיו התשפ"ז</span></button>
-                </div>
-            `;
-            chatArea.innerHTML += addPolaMessage(topicData.initial, semesterButtons);
+            chatArea.innerHTML += addPolaMessage(topicData.initial + '\n\nאתה יכול לענות: "אביב" או "סתיו"', '');
         } else if (topicData.hasSubOptions) {
             awaitingSubOption = topicId;
             chatArea.innerHTML += addPolaMessage(topicData.initial, createSubOptionsHTML(topicId));
@@ -735,6 +729,46 @@ function handleFileUpload() {
     scrollToBottom();
 }
 
+function handleAdmissionFlow(userInput) {
+    const lowerInput = userInput.toLowerCase();
+
+    // State: awaiting semester
+    if (admissionFlowState === 'awaiting_semester') {
+        let semester = null;
+        if (lowerInput.includes('אביב')) {
+            semester = 'אביב התשפ"ו';
+        } else if (lowerInput.includes('סתיו') || lowerInput.includes('סתו')) {
+            semester = 'סתיו התשפ"ז';
+        }
+
+        if (semester) {
+            selectedSemester = semester;
+            admissionFlowState = 'awaiting_grade_input_method';
+            chatArea.innerHTML += addPolaMessage(`מעולה! נבדוק את תנאי הקבלה לסמסטר ${semester}.\n\nאיך תרצה/י להמשיך?\nאתה יכול לענות: "להעלות מסמכים" או "להזין ידנית"`, '');
+        } else {
+            chatArea.innerHTML += addPolaMessage('לא זיהיתי את הסמסטר. אנא ענה/י "אביב" או "סתיו"', '');
+        }
+        scrollToBottom();
+    }
+    // State: awaiting grade input method
+    else if (admissionFlowState === 'awaiting_grade_input_method') {
+        if (lowerInput.includes('העלו') || lowerInput.includes('העל') || lowerInput.includes('מסמך') || lowerInput.includes('קוב')) {
+            chatArea.innerHTML += addPolaMessage(`נהדר! 📤\n\nתכונת העלאת קבצים תהיה זמינה בקרוב! 🚧\n\nבינתיים, אנא הזן/י את הציונים שלך ידנית או השתמש/י במחשבון הקבלה שלנו:\n\n🔗 <a href="https://www.bgu.ac.il/welcome/ba/calculator/" target="_blank" style="color:#2563eb;text-decoration:underline">מחשבון קבלה - אוניברסיטת בן-גוריון</a>`, '');
+            admissionFlowState = null;
+        } else if (lowerInput.includes('ידנ') || lowerInput.includes('הזנ') || lowerInput.includes('הקלד')) {
+            admissionFlowState = 'awaiting_grades_input';
+            chatArea.innerHTML += addPolaMessage(`מצוין! ⌨️\n\nבוא/י נזין את הציונים שלך.\nאנא הקלד/י את הציונים (למשל: בגרות 95, פסיכומטרי 680, אנגלית 125)`, '');
+        } else {
+            chatArea.innerHTML += addPolaMessage('לא הבנתי. אתה רוצה "להעלות מסמכים" או "להזין ידנית"?', '');
+        }
+        scrollToBottom();
+    }
+    // State: awaiting grades input
+    else if (admissionFlowState === 'awaiting_grades_input') {
+        handleManualGradesInput(userInput);
+    }
+}
+
 function handleManualGradesInput(gradesText) {
     chatArea.innerHTML += showTypingIndicator();
     scrollToBottom();
@@ -894,16 +928,30 @@ function handleProgramsFlow(userInput) {
             programsFlowState = 'awaiting_combination_or_admission';
 
             const deptDesc = departmentDescriptions[detectedDept];
-            const buttons = `
-                <div class="buttons-container" style="margin-top:12px;display:flex;flex-direction:column;gap:8px;">
-                    <button class="topic-btn" onclick="handleCombinationChoice()"><span class="icon">🔗</span><span>שילובים</span></button>
-                    <button class="topic-btn" onclick="handleAdmissionChoice()"><span class="icon">✅</span><span>תנאי קבלה</span></button>
-                </div>
-            `;
-            chatArea.innerHTML += addPolaMessage(deptDesc + '\n\nהאם אתה מעוניין לשמוע על שילובים או על תנאי קבלה?', buttons);
+            chatArea.innerHTML += addPolaMessage(deptDesc + '\n\nהאם אתה מעוניין לשמוע על שילובים או על תנאי קבלה?\nאתה יכול לענות: "שילובים" או "תנאי קבלה"', '');
         } else {
             // No department detected - ask for clarification
             chatArea.innerHTML += addPolaMessage('לא זיהיתי את התחום. אנא נסה/י שוב (למשל: פיסיקה, מתמטיקה, פסיכולוגיה)', '');
+        }
+        scrollToBottom();
+    }
+    // State: awaiting combination or admission choice
+    else if (programsFlowState === 'awaiting_combination_or_admission') {
+        if (lowerInput.includes('שילוב')) {
+            programsFlowState = 'awaiting_combination_category';
+            const msg = `מעולה! 🔗\n\nבאילו מתחומי התוכן הבאים אתה מעוניין לשלב את לימודי ה${selectedDepartment}?\n\nאנא הקלד/י אחד מהתחומים:\n• טיפולי • מדעי • הנדסי • פיננסי • יצירתי • מחקרי • חברתי • חינוכי • ניהולי`;
+            chatArea.innerHTML += addPolaMessage(msg, '');
+        } else if (lowerInput.includes('קבל')) {
+            // Transfer to admission
+            currentTopic = 'admission';
+            programsFlowState = null;
+            selectedDepartment = null;
+            chatArea.innerHTML += addPolaMessage('מעביר אותך למודול תנאי קבלה... ✅', '');
+            setTimeout(() => {
+                handleTopicSelect('admission');
+            }, 1000);
+        } else {
+            chatArea.innerHTML += addPolaMessage('לא הבנתי. אתה רוצה לשמוע על "שילובים" או "תנאי קבלה"?', '');
         }
         scrollToBottom();
     }
@@ -922,17 +970,41 @@ function handleProgramsFlow(userInput) {
             selectedCombinationCategory = detectedCategory;
             programsFlowState = 'awaiting_program_type';
 
-            const msg = `לאוניברסיטת בן-גוריון יש מסלולים מרתקים בתחום ה${detectedCategory}.\n\nהאם המסלול שמעניין אותך הוא:`;
-            const buttons = `
-                <div class="buttons-container" style="margin-top:12px;display:flex;flex-direction:column;gap:8px;">
-                    <button class="topic-btn" onclick="handleProgramType('דו-מחלקתי')"><span class="icon">🔗</span><span>דו-מחלקתי</span></button>
-                    <button class="topic-btn" onclick="handleProgramType('חטיבה ראשית')"><span class="icon">📚</span><span>חטיבה ראשית</span></button>
-                    <button class="topic-btn" onclick="handleProgramType('תואר כפול')"><span class="icon">🎓</span><span>תואר כפול</span></button>
-                </div>
-            `;
-            chatArea.innerHTML += addPolaMessage(msg, buttons);
+            const msg = `לאוניברסיטת בן-גוריון יש מסלולים מרתקים בתחום ה${detectedCategory}.\n\nהאם המסלול שמעניין אותך הוא:\nאתה יכול לענות: "דו-מחלקתי", "חטיבה ראשית" או "תואר כפול"`;
+            chatArea.innerHTML += addPolaMessage(msg, '');
         } else {
             chatArea.innerHTML += addPolaMessage('לא זיהיתי את התחום. אנא בחר/י אחד מהתחומים: טיפולי, מדעי, הנדסי, פיננסי, יצירתי, מחקרי, חברתי, חינוכי, ניהולי', '');
+        }
+        scrollToBottom();
+    }
+    // State: awaiting program type
+    else if (programsFlowState === 'awaiting_program_type') {
+        let programType = null;
+        if (lowerInput.includes('דו-מחלקתי') || lowerInput.includes('דו מחלקתי')) {
+            programType = 'דו-מחלקתי';
+        } else if (lowerInput.includes('חטיבה')) {
+            programType = 'חטיבה ראשית';
+        } else if (lowerInput.includes('תואר כפול') || lowerInput.includes('כפול')) {
+            programType = 'תואר כפול';
+        }
+
+        if (programType) {
+            // Filter programs based on criteria
+            const matchingPrograms = filterProgramsByCriteria(selectedDepartment, selectedCombinationCategory, programType);
+
+            if (matchingPrograms.length > 0) {
+                chatArea.innerHTML += addPolaMessage(`נמצאו ${matchingPrograms.length} תכניות שעונות על הקריטריונים שלך:`, '');
+                chatArea.innerHTML += createProgramButtonsFromList(matchingPrograms);
+            } else {
+                chatArea.innerHTML += addPolaMessage('לא נמצאו תכניות שעונות על הקריטריונים. נסה/י שילוב אחר או חפש/י תכנית ספציפית.', '');
+            }
+
+            // Reset state
+            programsFlowState = 'awaiting_field';
+            selectedDepartment = null;
+            selectedCombinationCategory = null;
+        } else {
+            chatArea.innerHTML += addPolaMessage('לא הבנתי. אנא ענה/י: "דו-מחלקתי", "חטיבה ראשית" או "תואר כפול"', '');
         }
         scrollToBottom();
     }
@@ -957,15 +1029,22 @@ function handleSendMessage() {
 
             if (currentTopic === 'counseling') {
                 // Show Holland questionnaire prompt
-                const questionnaireText = 'יש לנו שאלון, המונה 30 שאלות, שיכול לסייע לך בזיהוי תחומים שמתאימים לך.\n\nהאם תרצה להתחיל?\n\nהשאלון מבוסס על מודל הולנד ויעזור לנו להתאים תוכניות לימוד על פי תחומי העניין והכישורים שלך.';
-                const questionnaireBtn = `<div class="buttons-container" style="margin-top:12px"><button class="topic-btn" onclick="handleQuestionnaireStart()"><span class="icon">📝</span><span>מעבר לשאלון התאמה</span></button></div>`;
-                chatArea.innerHTML += addPolaMessage(questionnaireText, questionnaireBtn + '');
+                const questionnaireText = 'יש לנו שאלון, המונה 30 שאלות, שיכול לסייע לך בזיהוי תחומים שמתאימים לך.\n\nהאם תרצה להתחיל?\n\nהשאלון מבוסס על מודל הולנד ויעזור לנו להתאים תוכניות לימוד על פי תחומי העניין והכישורים שלך.\n\nאתה יכול לענות "כן" או "לא"';
+                chatArea.innerHTML += addPolaMessage(questionnaireText, '');
+
+                // Check if user wants to start questionnaire
+                const lowerValue = value.toLowerCase();
+                if (lowerValue.includes('כן') || lowerValue.includes('בטח') || lowerValue.includes('אשמח') || lowerValue.includes('רוצה')) {
+                    setTimeout(() => {
+                        chatArea.innerHTML += addPolaMessage('מעולה! 📝\n\nהשאלון יעזור לנו למצוא את התחומים המתאימים לך ביותר.\n\n🔗 <a href="https://www.bgu.ac.il/welcome/ba/questionnaire/" target="_blank" style="color:#2563eb;text-decoration:underline">מעבר לשאלון הולנד</a>', '');
+                        scrollToBottom();
+                    }, 800);
+                }
                 scrollToBottom();
             } else if (currentTopic === 'programs') {
                 handleProgramsFlow(value);
-            } else if (currentTopic === 'admission' && admissionFlowState === 'awaiting_grades_input') {
-                // Handle manual grades input
-                handleManualGradesInput(value);
+            } else if (currentTopic === 'admission') {
+                handleAdmissionFlow(value);
             } else {
                 chatArea.innerHTML += addPolaMessage(topicResponses[currentTopic].followUp, '');
                 scrollToBottom();
