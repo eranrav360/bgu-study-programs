@@ -859,18 +859,17 @@ function filterProgramsByCriteria(department, combinationCategory, programType) 
     // based on your programsData structure
     const results = [];
 
-    // Search through all programs
+    // Search through all programs matching ALL criteria
     for (const dept of programsData) {
         for (const program of dept.programs) {
             const programName = program.name.toLowerCase();
             const deptName = dept.department.toLowerCase();
 
-            // Check if it matches department
-            if (!deptName.includes(department.toLowerCase()) && !programName.includes(department.toLowerCase())) {
-                continue;
-            }
+            // Check if it matches the original department (physics, etc.)
+            const matchesDepartment = deptName.includes(department.toLowerCase()) || programName.includes(department.toLowerCase());
+            if (!matchesDepartment) continue;
 
-            // Check if it matches combination category (search for related keywords in program name)
+            // Check if it matches combination category (educational, etc.)
             const categoryKeywords = combinationCategories[combinationCategory] || [];
             let matchesCategory = false;
             for (const keyword of categoryKeywords) {
@@ -881,7 +880,7 @@ function filterProgramsByCriteria(department, combinationCategory, programType) 
             }
             if (!matchesCategory) continue;
 
-            // Check program type (this is approximate - you may need to adjust based on actual data)
+            // Check program type (dual-major, etc.)
             if (programType === 'דו-מחלקתי' && !programName.includes('דו-מחלקתי')) continue;
             if (programType === 'חטיבה ראשית' && (programName.includes('דו-מחלקתי') || programName.includes('תואר כפול'))) continue;
             if (programType === 'תואר כפול' && !programName.includes('תואר כפול')) continue;
