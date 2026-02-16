@@ -307,7 +307,7 @@ const topicResponses = {
         followUp: 'זה נשמע מעניין! באוניברסיטת בן-גוריון יש מגוון רחב של אפשרויות בתחום הזה. אשמח לשמוע עוד על הרקע שלך כדי להתאים לך את המסלול הנכון.',
     },
     programs: {
-        initial: 'בשמחה! 📚 באוניברסיטת בן-גוריון יש מגוון רחב של תכניות לימוד.\n\nמה מעניין אותך? הקלד/י מילה (למשל: מתמטיקה, הנדסה, פסיכולוגיה) ואני אציג לך את כל התכניות הרלוונטיות 👇',
+        initial: 'בשמחה! 📚 באוניברסיטת בן-גוריון יש מגוון רחב של תכניות לימוד.\n\nמה מעניין אותך?',
         followUp: 'רוצה לחפש תכנית נוספת? הקלד/י מילת חיפוש 👇',
     },
     admission: {
@@ -493,18 +493,12 @@ function handleTopicSelect(topicId) {
         if (typing) typing.remove();
 
         if (topicId === 'programs') {
-            programSearchMode = true;
             chatArea.innerHTML += addPolaMessage(topicData.initial, '');
-            chatArea.innerHTML += showSearchBox();
             scrollToBottom();
-            setTimeout(() => {
-                const input = document.getElementById('searchInput');
-                if (input) input.focus();
-            }, 100);
         } else if (topicId === 'admission') {
-            // Special handling for admission - ask for semester in text
+            // Special handling for admission - ask for semester
             admissionFlowState = 'awaiting_semester';
-            chatArea.innerHTML += addPolaMessage(topicData.initial + '\n\nאתה יכול לענות: "אביב" או "סתיו"', '');
+            chatArea.innerHTML += addPolaMessage(topicData.initial, '');
         } else if (topicData.hasSubOptions) {
             awaitingSubOption = topicId;
             chatArea.innerHTML += addPolaMessage(topicData.initial, createSubOptionsHTML(topicId));
@@ -712,7 +706,7 @@ function handleGradeInputMethod(method) {
             `;
             chatArea.innerHTML += addPolaMessage(uploadMsg, uploadBtn);
         } else {
-            const manualMsg = `מצוין! ⌨️\n\nבוא/י נזין את הציונים שלך:\n\n<b>ציון בגרות ממוצע:</b> __\n<b>ציון פסיכומטרי:</b> __\n<b>ציון אנגלית:</b> __\n\nאנא הקלד/י את הציונים (למשל: בגרות 95, פסיכומטרי 680, אנגלית 125)`;
+            const manualMsg = `מצוין! ⌨️\n\nבוא/י נזין את הציונים שלך (למשל: בגרות 95, פסיכומטרי 680, אנגלית 125)`;
             chatArea.innerHTML += addPolaMessage(manualMsg, '');
         }
 
@@ -744,9 +738,9 @@ function handleAdmissionFlow(userInput) {
         if (semester) {
             selectedSemester = semester;
             admissionFlowState = 'awaiting_grade_input_method';
-            chatArea.innerHTML += addPolaMessage(`מעולה! נבדוק את תנאי הקבלה לסמסטר ${semester}.\n\nאיך תרצה/י להמשיך?\nאתה יכול לענות: "להעלות מסמכים" או "להזין ידנית"`, '');
+            chatArea.innerHTML += addPolaMessage(`מעולה! נבדוק את תנאי הקבלה לסמסטר ${semester}.\n\nאיך תרצה/י להמשיך?`, '');
         } else {
-            chatArea.innerHTML += addPolaMessage('לא זיהיתי את הסמסטר. אנא ענה/י "אביב" או "סתיו"', '');
+            chatArea.innerHTML += addPolaMessage('לא זיהיתי את הסמסטר. על איזה סמסטר דיברנו?', '');
         }
         scrollToBottom();
     }
@@ -757,7 +751,7 @@ function handleAdmissionFlow(userInput) {
             admissionFlowState = null;
         } else if (lowerInput.includes('ידנ') || lowerInput.includes('הזנ') || lowerInput.includes('הקלד')) {
             admissionFlowState = 'awaiting_grades_input';
-            chatArea.innerHTML += addPolaMessage(`מצוין! ⌨️\n\nבוא/י נזין את הציונים שלך.\nאנא הקלד/י את הציונים (למשל: בגרות 95, פסיכומטרי 680, אנגלית 125)`, '');
+            chatArea.innerHTML += addPolaMessage(`מצוין! ⌨️\n\nבוא/י נזין את הציונים שלך (למשל: בגרות 95, פסיכומטרי 680, אנגלית 125)`, '');
         } else {
             chatArea.innerHTML += addPolaMessage('לא הבנתי. אתה רוצה "להעלות מסמכים" או "להזין ידנית"?', '');
         }
@@ -786,7 +780,7 @@ function handleManualGradesInput(gradesText) {
             const summary = `תודה! קיבלתי את הציונים:\n${bagrut ? `• בגרות: ${bagrut[1]}\n` : ''}${psycho ? `• פסיכומטרי: ${psycho[1]}\n` : ''}${english ? `• אנגלית: ${english[1]}\n` : ''}\nעל פי הציונים שלך, אתה יכול להתקבל למגוון תכניות לימוד.\n\nלחישוב מדויק יותר, מומלץ להשתמש במחשבון הקבלה:\n🔗 <a href="https://www.bgu.ac.il/welcome/ba/calculator/" target="_blank" style="color:#2563eb;text-decoration:underline">מחשבון קבלה</a>`;
             chatArea.innerHTML += addPolaMessage(summary, '');
         } else {
-            chatArea.innerHTML += addPolaMessage('לא הצלחתי לזהות את הציונים. אנא נסה/י שוב בפורמט:\nבגרות 95, פסיכומטרי 680, אנגלית 125', '');
+            chatArea.innerHTML += addPolaMessage('לא הצלחתי לזהות את הציונים. אפשר לנסות שוב?\n(למשל: בגרות 95, פסיכומטרי 680, אנגלית 125)', '');
         }
 
         // Reset state
@@ -805,7 +799,7 @@ function handleCombinationChoice() {
         if (typing) typing.remove();
 
         programsFlowState = 'awaiting_combination_category';
-        const msg = `מעולה! 🔗\n\nבאילו מתחומי התוכן הבאים אתה מעוניין לשלב את לימודי ה${selectedDepartment}?\n\nאנא הקלד/י אחד מהתחומים:\n• טיפולי\n• מדעי\n• הנדסי\n• פיננסי\n• יצירתי\n• מחקרי\n• חברתי\n• חינוכי\n• ניהולי`;
+        const msg = `מעולה! 🔗\n\nבאילו תחומי תוכן אתה מעוניין לשלב את לימודי ה${selectedDepartment}?\n\nטיפולי, מדעי, הנדסי, פיננסי, יצירתי, מחקרי, חברתי, חינוכי, או ניהולי?`;
         chatArea.innerHTML += addPolaMessage(msg, '');
         scrollToBottom();
     }, 800);
@@ -928,10 +922,10 @@ function handleProgramsFlow(userInput) {
             programsFlowState = 'awaiting_combination_or_admission';
 
             const deptDesc = departmentDescriptions[detectedDept];
-            chatArea.innerHTML += addPolaMessage(deptDesc + '\n\nהאם אתה מעוניין לשמוע על שילובים או על תנאי קבלה?\nאתה יכול לענות: "שילובים" או "תנאי קבלה"', '');
+            chatArea.innerHTML += addPolaMessage(deptDesc + '\n\nהאם אתה מעוניין לשמוע על שילובים או על תנאי קבלה?', '');
         } else {
             // No department detected - ask for clarification
-            chatArea.innerHTML += addPolaMessage('לא זיהיתי את התחום. אנא נסה/י שוב (למשל: פיסיקה, מתמטיקה, פסיכולוגיה)', '');
+            chatArea.innerHTML += addPolaMessage('לא זיהיתי את התחום. על איזה תחום לימוד חשבת?', '');
         }
         scrollToBottom();
     }
@@ -939,7 +933,7 @@ function handleProgramsFlow(userInput) {
     else if (programsFlowState === 'awaiting_combination_or_admission') {
         if (lowerInput.includes('שילוב')) {
             programsFlowState = 'awaiting_combination_category';
-            const msg = `מעולה! 🔗\n\nבאילו מתחומי התוכן הבאים אתה מעוניין לשלב את לימודי ה${selectedDepartment}?\n\nאנא הקלד/י אחד מהתחומים:\n• טיפולי • מדעי • הנדסי • פיננסי • יצירתי • מחקרי • חברתי • חינוכי • ניהולי`;
+            const msg = `מעולה! 🔗\n\nבאילו תחומי תוכן אתה מעוניין לשלב את לימודי ה${selectedDepartment}?\n\nטיפולי, מדעי, הנדסי, פיננסי, יצירתי, מחקרי, חברתי, חינוכי, או ניהולי?`;
             chatArea.innerHTML += addPolaMessage(msg, '');
         } else if (lowerInput.includes('קבל')) {
             // Transfer to admission
@@ -970,7 +964,7 @@ function handleProgramsFlow(userInput) {
             selectedCombinationCategory = detectedCategory;
             programsFlowState = 'awaiting_program_type';
 
-            const msg = `לאוניברסיטת בן-גוריון יש מסלולים מרתקים בתחום ה${detectedCategory}.\n\nהאם המסלול שמעניין אותך הוא:\nאתה יכול לענות: "דו-מחלקתי", "חטיבה ראשית" או "תואר כפול"`;
+            const msg = `לאוניברסיטת בן-גוריון יש מסלולים מרתקים בתחום ה${detectedCategory}.\n\nאיזה סוג מסלול מעניין אותך? דו-מחלקתי, חטיבה ראשית או תואר כפול?`;
             chatArea.innerHTML += addPolaMessage(msg, '');
         } else {
             chatArea.innerHTML += addPolaMessage('לא זיהיתי את התחום. אנא בחר/י אחד מהתחומים: טיפולי, מדעי, הנדסי, פיננסי, יצירתי, מחקרי, חברתי, חינוכי, ניהולי', '');
@@ -1004,7 +998,7 @@ function handleProgramsFlow(userInput) {
             selectedDepartment = null;
             selectedCombinationCategory = null;
         } else {
-            chatArea.innerHTML += addPolaMessage('לא הבנתי. אנא ענה/י: "דו-מחלקתי", "חטיבה ראשית" או "תואר כפול"', '');
+            chatArea.innerHTML += addPolaMessage('לא הבנתי. על איזה סוג מסלול חשבת?', '');
         }
         scrollToBottom();
     }
@@ -1029,7 +1023,7 @@ function handleSendMessage() {
 
             if (currentTopic === 'counseling') {
                 // Show Holland questionnaire prompt
-                const questionnaireText = 'יש לנו שאלון, המונה 30 שאלות, שיכול לסייע לך בזיהוי תחומים שמתאימים לך.\n\nהאם תרצה להתחיל?\n\nהשאלון מבוסס על מודל הולנד ויעזור לנו להתאים תוכניות לימוד על פי תחומי העניין והכישורים שלך.\n\nאתה יכול לענות "כן" או "לא"';
+                const questionnaireText = 'יש לנו שאלון, המונה 30 שאלות, שיכול לסייע לך בזיהוי תחומים שמתאימים לך.\n\nהאם תרצה להתחיל?\n\nהשאלון מבוסס על מודל הולנד ויעזור לנו להתאים תוכניות לימוד על פי תחומי העניין והכישורים שלך.';
                 chatArea.innerHTML += addPolaMessage(questionnaireText, '');
 
                 // Check if user wants to start questionnaire
