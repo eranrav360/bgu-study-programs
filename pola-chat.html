@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>פולה - יועצת אקדמית דיגיטלית</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to bottom, #f3f4f6, #e5e7eb);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            direction: rtl;
+        }
+
+        .chat-container {
+            width: 100%;
+            max-width: 420px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 700px;
+        }
+
+        /* Header */
+        .chat-header {
+            background: linear-gradient(to left, #f97316, #fb923c);
+            padding: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .header-left { display: flex; align-items: center; gap: 12px; }
+        .header-avatar {
+            width: 40px; height: 40px;
+            background: white; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 20px;
+        }
+        .header-title { color: white; font-weight: bold; font-size: 16px; }
+        .header-subtitle { color: #fed7aa; font-size: 12px; }
+        .header-badge {
+            background: rgba(255,255,255,0.2);
+            padding: 4px 12px; border-radius: 20px;
+            color: white; font-size: 12px;
+            display: none;
+        }
+        .header-badge.visible { display: block; }
+
+        /* Chat Area */
+        .chat-area {
+            flex: 1;
+            overflow-y: auto;
+            padding: 16px;
+            background: #f9fafb;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        /* Messages */
+        .msg-pola-wrap { display: flex; flex-direction: column; align-items: flex-end; }
+        .msg-user-wrap { display: flex; flex-direction: column; align-items: flex-start; }
+        .msg-system-wrap { display: flex; justify-content: center; }
+
+        .msg-label { color: #f97316; font-size: 11px; font-weight: 600; margin-bottom: 4px; }
+
+        .msg-pola {
+            background: linear-gradient(to bottom right, #fff7ed, rgba(255,237,213,0.5));
+            border-radius: 16px; border-top-right-radius: 4px;
+            padding: 16px; max-width: 85%;
+            border: 1px solid #fed7aa;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+        .msg-pola p { color: #374151; font-size: 14px; line-height: 1.6; white-space: pre-line; }
+
+        .msg-user {
+            background: #f97316; color: white;
+            border-radius: 16px; border-top-left-radius: 4px;
+            padding: 12px; max-width: 85%;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+        .msg-user p { font-size: 14px; }
+
+        .msg-system {
+            background: #e5e7eb; color: #6b7280;
+            font-size: 12px; padding: 4px 12px; border-radius: 20px;
+        }
+
+        /* Buttons */
+        .topic-btn {
+            width: 100%; text-align: right;
+            padding: 12px; border-radius: 12px;
+            border: 2px solid #fed7aa; background: white;
+            color: #374151; cursor: pointer;
+            display: flex; align-items: center; gap: 8px;
+            transition: all 0.2s; font-size: 14px; font-weight: 500;
+            font-family: inherit;
+        }
+        .topic-btn:hover { border-color: #fb923c; background: #fff7ed; transform: scale(1.02); }
+        .topic-btn .icon { font-size: 18px; }
+
+        .topic-btn-small {
+            display: inline-flex; align-items: center; gap: 4px;
+            padding: 4px 10px; font-size: 12px;
+            background: rgba(255,255,255,0.8); border: 1px solid #fed7aa;
+            border-radius: 20px; color: #6b7280; cursor: pointer;
+            transition: all 0.2s; font-family: inherit;
+        }
+        .topic-btn-small:hover { background: #fff7ed; color: #ea580c; transform: scale(1.05); }
+
+        .other-topics {
+            margin-top: 12px; padding-top: 12px;
+            border-top: 1px solid rgba(253,186,116,0.3);
+            display: flex; flex-wrap: wrap; gap: 6px;
+        }
+        .other-topics-label { font-size: 11px; color: #9ca3af; width: 100%; margin-bottom: 4px; }
+
+        /* Sub option buttons */
+        .sub-option-btn {
+            width: 100%; text-align: right;
+            padding: 12px; border-radius: 12px;
+            border: 2px solid #fed7aa; background: white;
+            color: #374151; cursor: pointer;
+            display: flex; align-items: center; gap: 8px;
+            transition: all 0.2s; font-size: 13px; font-weight: 500;
+            font-family: inherit;
+        }
+        .sub-option-btn:hover { border-color: #fb923c; background: #fff7ed; }
+        .sub-option-btn .icon { font-size: 18px; }
+
+        /* Program buttons */
+        .program-section-label { font-size: 12px; font-weight: bold; margin-top: 8px; }
+        .program-section-label.ba { color: #2563eb; }
+        .program-section-label.ma { color: #7c3aed; }
+
+        .program-btn {
+            width: 100%; text-align: right;
+            padding: 10px; border-radius: 12px;
+            border: 2px solid #bfdbfe; background: white;
+            color: #374151; cursor: pointer;
+            display: flex; align-items: center; gap: 8px;
+            transition: all 0.2s; font-size: 12px; font-weight: 500;
+            font-family: inherit;
+        }
+        .program-btn:hover { border-color: #60a5fa; background: #eff6ff; }
+        .program-btn.ma { border-color: #c4b5fd; }
+        .program-btn.ma:hover { border-color: #a78bfa; background: #f5f3ff; }
+        .program-btn .label { flex: 1; }
+        .program-btn .eilat-badge {
+            font-size: 11px; background: #fef9c3; color: #a16207;
+            padding: 2px 8px; border-radius: 20px;
+        }
+        .program-btn .dept-badge {
+            font-size: 10px; background: #f0f0f0; color: #666;
+            padding: 2px 8px; border-radius: 20px; white-space: nowrap;
+        }
+
+        /* Search box */
+        .search-wrap {
+            display: flex; flex-direction: column; align-items: flex-end;
+        }
+        .search-bubble {
+            background: linear-gradient(to bottom right, #f0fdf4, rgba(220,252,231,0.5));
+            border-radius: 16px; border-top-right-radius: 4px;
+            padding: 16px; max-width: 85%;
+            border: 1px solid #bbf7d0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+        .search-input {
+            width: 100%; padding: 12px;
+            border-radius: 12px; border: 2px solid #fb923c;
+            font-size: 14px; text-align: right;
+            outline: none; font-family: inherit;
+            direction: rtl;
+        }
+        .search-input:focus { border-color: #ea580c; box-shadow: 0 0 0 3px rgba(251,146,60,0.2); }
+        .search-results {
+            max-height: 200px; overflow-y: auto;
+            margin-top: 8px; display: flex; flex-direction: column; gap: 4px;
+        }
+        .search-result-btn {
+            width: 100%; text-align: right;
+            padding: 10px; border-radius: 12px;
+            border: 1px solid #fed7aa; background: white;
+            color: #374151; cursor: pointer;
+            font-size: 13px; transition: all 0.2s;
+            font-family: inherit;
+        }
+        .search-result-btn:hover { border-color: #fb923c; background: #fff7ed; }
+        .search-no-results { text-align: center; color: #9ca3af; font-size: 13px; padding: 8px; }
+
+        /* Typing indicator */
+        .typing-wrap { display: flex; flex-direction: column; align-items: flex-end; }
+        .typing-bubble {
+            background: #fff7ed; border-radius: 16px; border-top-right-radius: 4px;
+            padding: 16px; border: 1px solid #fed7aa;
+            display: flex; gap: 4px;
+        }
+        .typing-dot {
+            width: 8px; height: 8px; background: #fb923c;
+            border-radius: 50%; animation: bounce 1.4s ease-in-out infinite;
+        }
+        .typing-dot:nth-child(2) { animation-delay: 0.15s; }
+        .typing-dot:nth-child(3) { animation-delay: 0.3s; }
+        @keyframes bounce {
+            0%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-8px); }
+        }
+
+        /* Input area */
+        .input-area {
+            padding: 12px; background: #f97316;
+            display: flex; align-items: center; gap: 12px;
+        }
+        .send-btn {
+            width: 40px; height: 40px; border-radius: 50%;
+            background: #ea580c; border: none; cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            color: white; transition: background 0.2s;
+        }
+        .send-btn:hover { background: #c2410c; }
+        .send-btn svg { width: 20px; height: 20px; transform: rotate(180deg); }
+        .msg-input {
+            flex: 1; background: rgba(255,255,255,0.1);
+            border: none; outline: none; color: white;
+            text-align: right; padding: 10px 16px;
+            border-radius: 20px; font-size: 14px;
+            font-family: inherit;
+        }
+        .msg-input::placeholder { color: rgba(255,255,255,0.7); }
+
+        .buttons-container { display: flex; flex-direction: column; gap: 8px; margin-top: 12px; }
+    </style>
+</head>
+<body>
+
+<div class="chat-container">
+    <div class="chat-header">
+        <div class="header-left">
+            <div class="header-avatar">🎓</div>
+            <div>
+                <div class="header-title">פולה</div>
+                <div class="header-subtitle">היועצת הדיגיטלית של בן-גוריון</div>
+            </div>
+        </div>
+        <div class="header-badge" id="topicBadge"></div>
+    </div>
+
+    <div class="chat-area" id="chatArea">
+        <!-- Welcome message rendered by JS -->
+    </div>
+
+    <div class="input-area">
+        <button class="send-btn" onclick="handleSendMessage()">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+            </svg>
+        </button>
+        <input type="text" class="msg-input" id="msgInput" placeholder="הקלידו כאן..." onkeypress="if(event.key==='Enter')handleSendMessage()">
+    </div>
+</div>
+
+<script>
+// Programs data
+const programsData = {"לימודי מדבר":[{"d":"לימודי מדבר עם תזה - חקלאות וביוטכנולוגיה באזורים צחיחים","s":"תואר 2"},{"d":"לימודי מדבר עם תזה - מיקרוביולוגיה סביבתית","s":"תואר 2"},{"d":"לימודי מדבר עם תזה - השקיה וסביבת הצמח","s":"תואר 2"},{"d":"לימודי מדבר עם תזה - אגרואינפורמטיקה","s":"תואר 2"}],"הידרולוגיה ואיכות מים":[{"d":"הידרולוגיה ואיכות מים עם תזה - מיקרוביולוגיה ואיכות מים","s":"תואר 2"},{"d":"הידרולוגיה ואיכות מים עם תזה - התפלה וטיפול במים","s":"תואר 2"},{"d":"הידרולוגיה ואיכות מים עם תזה - משאבי מים","s":"תואר 2"}],"פיזיקה סביבתית ואנרגית שמש":[{"d":"פיזיקה סביבתית ואנרגית שמש עם תזה","s":"תואר 2"}],"אקולוגיה, ממשק ושמירת טבע":[{"d":"אקולוגיה, ממשק ושמירת טבע עם תזה - ממשק ושמירת טבע","s":"תואר 2"},{"d":"אקולוגיה, ממשק ושמירת טבע עם תזה - אקולוגיה אבולוציונית","s":"תואר 2"}],"לימודי מדינת ישראל":[{"d":"לימודי מדינת ישראל מחקרי","s":"תואר 2"},{"d":"לימודי מדינת ישראל כללי","s":"תואר 2"},{"d":"לימודי מדינת ישראל דו מחלקתי","s":"תואר 1"},{"d":"לימודי מדינת ישראל דו מחלקתי - לומדים על מדים","s":"תואר 1"},{"d":"לימודי מדינת ישראל דו מחלקתי - קמפוס אילת","s":"תואר 1","e":1}],"מדעי הקוגניציה והמח":[{"d":"מדעי הקוגניציה והמח המחקרי","s":"תואר 2"},{"d":"מדעי הקוגניציה והמח דו מחלקתי עם מדעי הרוח והחברה","s":"תואר 1"},{"d":"מדעי הקוגניציה והמח ראשי","s":"תואר 1"},{"d":"מדעי הקוגניציה והמח דו מחלקתי עם מדעי הטבע","s":"תואר 1"},{"d":"מדעי הקוגניציה והמח דו מחלקתי עם מדעי הטבע - שילוב עם מדעי המחשב","s":"תואר 1"},{"d":"מדעי הקוגניציה והמח דו מחלקתי עם מדעי הטבע - שילוב עם מדעי החיים","s":"תואר 1"},{"d":"מדעי הקוגניציה והמח דו מחלקתי עם מדעי הטבע - שילוב עם מתמטיקה","s":"תואר 1"},{"d":"מדעי הקוגניציה והמח חד מחלקתי","s":"תואר 1"}],"פסיכולוגיה":[{"d":"פסיכולוגיה מחקרי - פסיכולוגיה קלינית","s":"תואר 2"},{"d":"פסיכולוגיה מחקרי - פסיכולוגיה התפתחותית","s":"תואר 2"},{"d":"פסיכולוגיה מחקרי - פסיכולוגיה ניסויית: קוגניציה ומוח","s":"תואר 2"},{"d":"פסיכולוגיה מחקרי - פסיכולוגיה חברתית","s":"תואר 2"},{"d":"פסיכולוגיה השלמה - פסיכולוגיה ניסויית: קוגניציה ומוח","s":"תואר 2"},{"d":"פסיכולוגיה השלמה - פסיכולוגיה חברתית","s":"תואר 2"},{"d":"פסיכולוגיה דו מחלקתי - פיסיקה","s":"תואר 1"},{"d":"פסיכולוגיה דו מחלקתי","s":"תואר 1"},{"d":"פסיכולוגיה דו מחלקתי - פסיכוביולוגיה","s":"תואר 1"},{"d":"פסיכולוגיה דו מחלקתי - קמפוס אילת","s":"תואר 1","e":1}],"סוציולוגיה ואנתרופולוגיה":[{"d":"סוציולוגיה ואנתרופולוגיה כללי","s":"תואר 2"},{"d":"סוציולוגיה ואנתרופולוגיה כללי - סוציולוגיה ארגונית","s":"תואר 2"},{"d":"סוציולוגיה ואנתרופולוגיה מחקרי","s":"תואר 2"},{"d":"סוציולוגיה ואנתרופולוגיה מחקרי - סוציולוגיה ארגונית","s":"תואר 2"},{"d":"סוציולוגיה ואנתרופולוגיה דו מחלקתי","s":"תואר 1"}],"מקרא":[{"d":"מקרא כללי","s":"תואר 2"},{"d":"מקרא מחקרי","s":"תואר 2"}],"ספרות עברית":[{"d":"ספרות עברית מחקרי","s":"תואר 2"},{"d":"ספרות עברית כללי - כתיבה יצירתית","s":"תואר 2"},{"d":"ספרות עברית כללי","s":"תואר 2"},{"d":"ספרות עברית ראשי","s":"תואר 1"},{"d":"ספרות עברית דו-מחלקתי","s":"תואר 1"}],"לשון עברית":[{"d":"לשון עברית מחקרי - עריכה לשונית","s":"תואר 2"},{"d":"לשון עברית מחקרי","s":"תואר 2"},{"d":"לשון עברית כללי","s":"תואר 2"},{"d":"לשון עברית כללי - עריכה לשונית","s":"תואר 2"},{"d":"לשון עברית דו-מחלקתי","s":"תואר 1"}],"לימודי המזרח התיכון":[{"d":"לימודי המזרח התיכון כללי","s":"תואר 2"},{"d":"לימודי המזרח התיכון מחקרי","s":"תואר 2"},{"d":"לימודי המזרח התיכון ראשי","s":"תואר 1"},{"d":"לימודי המזרח התיכון דו מחלקתי","s":"תואר 1"}],"היסטוריה של עם ישראל":[{"d":"היסטוריה של עם ישראל מחקרי","s":"תואר 2"},{"d":"היסטוריה של עם ישראל כללי","s":"תואר 2"},{"d":"היסטוריה של עם ישראל דו מחלקתי","s":"תואר 1"}],"מחשבת ישראל":[{"d":"מחשבת ישראל כללי","s":"תואר 2"},{"d":"מחשבת ישראל מחקרי","s":"תואר 2"},{"d":"מחשבת ישראל דו-מחלקתי","s":"תואר 1"}],"היסטוריה כללית":[{"d":"היסטוריה כללית מחקרי","s":"תואר 2"},{"d":"היסטוריה כללית כללי","s":"תואר 2"},{"d":"היסטוריה כללית דו מחלקתי","s":"תואר 1"}],"מדעי הסביבה, גאואינפורמטיקה ותכנון ערים-גאוגרפיה":[{"d":"מדעי הסביבה, גאואינפורמטיקה ותכנון ערים-גאוגרפיה מחקרי - גיאואינפורמטיקה","s":"תואר 2"},{"d":"מדעי הסביבה, גאואינפורמטיקה ותכנון ערים-גאוגרפיה כללי","s":"תואר 2"},{"d":"מדעי הסביבה, גאואינפורמטיקה ותכנון ערים-גאוגרפיה דו-מחלקתי","s":"תואר 1"},{"d":"מדעי הסביבה, גאואינפורמטיקה ותכנון ערים-גאוגרפיה ראשי","s":"תואר 1"},{"d":"מדעי הסביבה, גאואינפורמטיקה ותכנון ערים-גאוגרפיה חד-מחלקתי","s":"תואר 1"}],"חינוך":[{"d":"חינוך מחקרי - חינוך, למידה והתחדשות","s":"תואר 2"},{"d":"חינוך מחקרי - מנהל, חברה ומדיניות החינוך","s":"תואר 2"},{"d":"חינוך דו-מחלקתי","s":"תואר 1"},{"d":"חינוך ראשי - מנהל ומדיניות חינוך","s":"תואר 1"},{"d":"חינוך דו-מחלקתי - קמפוס אילת","s":"תואר 1","e":1}],"פילוסופיה":[{"d":"פילוסופיה מחקרי","s":"תואר 2"},{"d":"פילוסופיה כללי","s":"תואר 2"},{"d":"פילוסופיה דו מחלקתי","s":"תואר 1"}],"כלכלה":[{"d":"כלכלה כללי","s":"תואר 2"},{"d":"כלכלה מחקרי","s":"תואר 2"},{"d":"כלכלה חד מחלקתי - חשבונאות","s":"תואר 1"},{"d":"כלכלה חד מחלקתי - מנהל עסקים","s":"תואר 1"},{"d":"כלכלה דו מחלקתי","s":"תואר 1"},{"d":"כלכלה ראשי","s":"תואר 1"}],"עבודה סוציאלית":[{"d":"עבודה סוציאלית כללי - בריאות הנפש","s":"תואר 2"},{"d":"עבודה סוציאלית כללי - ילד ומשפחה","s":"תואר 2"},{"d":"עבודה סוציאלית חד מחלקתי - מסלול רגיל","s":"תואר 1"},{"d":"עבודה סוציאלית חד מחלקתי - קמפוס אילת","s":"תואר 1","e":1}],"מדעי המחשב":[{"d":"מדעי המחשב עבודת גמר - מדעי המחשב","s":"תואר 2"},{"d":"מדעי המחשב צבירה - מדעי המחשב","s":"תואר 2"},{"d":"מדעי המחשב ראשי","s":"תואר 1"},{"d":"מדעי המחשב דו מחלקתי - מדעי הרוח והחברה","s":"תואר 1"},{"d":"מדעי המחשב חד-מחלקתי - מדעי המחשב","s":"תואר 1"},{"d":"מדעי המחשב חד-מחלקתי - מדעי הנתונים","s":"תואר 1"},{"d":"מדעי המחשב משולב לתואר כפול - הנדסת חשמל ומחשבים","s":"תואר 1"}],"מתמטיקה":[{"d":"מתמטיקה עבודת גמר - מתמטיקה יישומית","s":"תואר 2"},{"d":"מתמטיקה עבודת גמר - מתמטיקה עיונית","s":"תואר 2"},{"d":"מתמטיקה ראשי","s":"תואר 1"},{"d":"מתמטיקה חד-מחלקתי - מתמטיקה כללית","s":"תואר 1"},{"d":"מתמטיקה דו מחלקתי - מתמטיקה ומדעי המחשב","s":"תואר 1"}],"פיסיקה":[{"d":"פיסיקה עבודת גמר - פיסיקה","s":"תואר 2"},{"d":"פיסיקה חד מחלקתי","s":"תואר 1"},{"d":"פיסיקה ראשי","s":"תואר 1"},{"d":"פיסיקה משולב לתואר כפול - פיסיקה והנדסת חשמל","s":"תואר 1"}],"כימיה":[{"d":"כימיה עבודת גמר - כימיה","s":"תואר 2"},{"d":"כימיה חד מחלקתי - כימיה","s":"תואר 1"},{"d":"כימיה ראשי","s":"תואר 1"}],"מדעי החיים":[{"d":"מדעי החיים עבודת גמר - מדעי החיים","s":"תואר 2"},{"d":"מדעי החיים חד מחלקתי - מדעי החיים","s":"תואר 1"},{"d":"מדעי החיים ראשי","s":"תואר 1"},{"d":"מדעי החיים חד מחלקתי - ביולוגיה וביוטכנולוגיה ימית - קמפוס אילת","s":"תואר 1","e":1}],"הנדסת חשמל ומחשבים":[{"d":"הנדסת חשמל ומחשבים חד מחלקתי עם עבודת גמר (תיזה)","s":"תואר 2"},{"d":"הנדסת חשמל ומחשבים חד מחלקתי","s":"תואר 1"}],"הנדסת מכונות":[{"d":"הנדסת מכונות חד מחלקתי עם עבודת גמר (תיזה)","s":"תואר 2"},{"d":"הנדסת מכונות חד מחלקתי","s":"תואר 1"}],"הנדסה כימית":[{"d":"הנדסה כימית חד מחלקתי עם עבודת גמר (תיזה)","s":"תואר 2"},{"d":"הנדסה כימית חד-מחלקתי","s":"תואר 1"}],"הנדסת תעשיה וניהול":[{"d":"הנדסת תעשיה וניהול חד מחלקתי עם סמינר מסכם","s":"תואר 2"},{"d":"הנדסת תעשיה וניהול חד מחלקתי","s":"תואר 1"}],"הנדסת מערכות מידע":[{"d":"הנדסת מערכות מידע חד מחלקתי עם עבודת גמר (תיזה)","s":"תואר 2"},{"d":"הנדסת מערכות מידע חד מחלקתי","s":"תואר 1"}],"הנדסת בניין":[{"d":"הנדסת בניין חד מחלקתי עם עבודת גמר (תיזה)","s":"תואר 2"},{"d":"הנדסת בניין חד מחלקתי","s":"תואר 1"}],"הנדסה ביו-רפואית":[{"d":"הנדסה ביו-רפואית חד מחלקתי עם עבודת גמר (תיזה)","s":"תואר 2"},{"d":"הנדסה ביו-רפואית חד מחלקתי","s":"תואר 1"}],"הנדסת ביוטכנולוגיה":[{"d":"הנדסת ביוטכנולוגיה חד מחלקתי עם עבודת גמר (תיזה)","s":"תואר 2"},{"d":"הנדסת ביוטכנולוגיה חד-מחלקתי","s":"תואר 1"}],"הנדסת תכנה":[{"d":"הנדסת תכנה חד מחלקתי","s":"תואר 1"}],"הנדסת מחשבים":[{"d":"הנדסת מחשבים חד מחלקתי","s":"תואר 1"}],"הנדסת נתונים":[{"d":"הנדסת נתונים חד מחלקתי","s":"תואר 1"}],"מנהל עסקים":[{"d":"מנהל עסקים ללא עבודת גמר - MBA בפרספקטיבה רב-תחומית","s":"תואר 2"},{"d":"מנהל עסקים ללא עבודת גמר - MBA בשיווק וייעוץ אסטרטגי","s":"תואר 2"},{"d":"מנהל עסקים ללא עבודת גמר - MBA במימון ואקטואריה","s":"תואר 2"},{"d":"מנהל עסקים ללא עבודת גמר - MBA בחדשנות ויזמות היי-טק","s":"תואר 2"}],"ניהול":[{"d":"ניהול חד מחלקתי - שיווק","s":"תואר 1"},{"d":"ניהול חד מחלקתי - מימון","s":"תואר 1"},{"d":"ניהול חד מחלקתי - יזמות וחדשנות","s":"תואר 1"},{"d":"ניהול דו מחלקתי - קמפוס אילת","s":"תואר 1","e":1}],"ניהול תיירות ופנאי":[{"d":"ניהול תיירות ופנאי ללא עבודת גמר-מרוכז","s":"תואר 2"},{"d":"ניהול תיירות ופנאי חד מחלקתי","s":"תואר 1"},{"d":"ניהול תיירות ופנאי חד מחלקתי - קמפוס אילת","s":"תואר 1","e":1}],"רוקחות":[{"d":"רוקחות קליני","s":"תואר 2"},{"d":"רוקחות חד מחלקתי","s":"תואר 1"}],"פיזיותרפיה":[{"d":"פיזיותרפיה עם עבודת גמר","s":"תואר 2"},{"d":"פיזיותרפיה חד-מחלקתי","s":"תואר 1"}],"מדעי האחיות (סיעוד)":[{"d":"מדעי האחיות (סיעוד) חד-מחלקתי","s":"תואר 2"},{"d":"מדעי האחיות (סיעוד) חד-מחלקתי","s":"תואר 1"},{"d":"מדעי האחיות (סיעוד) חד-מחלקתי - קמפוס אילת","s":"תואר 1","e":1}],"ריפוי בעיסוק":[{"d":"ריפוי בעיסוק חד מחלקתי","s":"תואר 1"}],"רפואה על שם ג'ויס וארוינג גולדמן":[{"d":"רפואה על שם ג'ויס וארוינג גולדמן חד-מחלקתי","s":"תואר 1"}],"תקשורת":[{"d":"תקשורת המחקרי","s":"תואר 2"},{"d":"תקשורת דו מחלקתי","s":"תואר 1"},{"d":"תקשורת דו מחלקתי - קמפוס אילת","s":"תואר 1","e":1}],"אמנויות":[{"d":"אמנויות דו מחלקתי - אמנות חזותית","s":"תואר 1"},{"d":"אמנויות דו מחלקתי - תולדות האמנות","s":"תואר 1"},{"d":"אמנויות דו מחלקתי - קמפוס אילת","s":"תואר 1","e":1}],"לימודים רב תחומיים":[{"d":"לימודים רב תחומיים דו מחלקתי","s":"תואר 1"},{"d":"לימודים רב תחומיים דו מחלקתי - קמפוס אילת","s":"תואר 1","e":1}],"הכשרת מורים":[{"d":"הכשרת מורים חד שנתי","s":"תואר 2"},{"d":"הכשרת מורים דו שנתי","s":"תואר 2"},{"d":"הכשרת מורים חד שנתי - קמפוס אילת","s":"תואר 2","e":1}],"מדעי ההתנהגות":[{"d":"מדעי ההתנהגות חד מחלקתי","s":"תואר 1"}],"קיימות ושמירת סביבה":[{"d":"קיימות ושמירת סביבה דו מחלקתי","s":"תואר 1"}],"בלשנות":[{"d":"בלשנות מחקרי","s":"תואר 2"},{"d":"בלשנות דו מחלקתי","s":"תואר 1"}],"ארכיאולוגיה":[{"d":"ארכיאולוגיה מחקרי","s":"תואר 2"},{"d":"ארכיאולוגיה דו מחלקתי","s":"תואר 1"}],"פוליטיקה וממשל":[{"d":"פוליטיקה וממשל מחקרי","s":"תואר 2"},{"d":"פוליטיקה וממשל דו מחלקתי","s":"תואר 1"}],"ספרויות זרות":[{"d":"ספרויות זרות מחקרי","s":"תואר 2"},{"d":"ספרויות זרות דו מחלקתי - ספרות אנגלית","s":"תואר 1"}],"ניהול וישוב סכסוכים":[{"d":"ניהול וישוב סכסוכים כללי","s":"תואר 2"},{"d":"ניהול וישוב סכסוכים כללי - קמפוס אילת","s":"תואר 2","e":1},{"d":"ניהול וישוב סכסוכים חטיבה מורחבת","s":"תואר 1"}],"לימודי אפריקה":[{"d":"לימודי אפריקה מחקרי","s":"תואר 2"},{"d":"לימודי אפריקה דו מחלקתי","s":"תואר 1"}],"תולדות האמנות ותרבות חזותית":[{"d":"תולדות האמנות ותרבות חזותית מחקרי","s":"תואר 2"},{"d":"תולדות האמנות ותרבות חזותית כללי - קמפוס אילת","s":"תואר 2","e":1}],"מדעי כדור הארץ והסביבה":[{"d":"מדעי כדור הארץ והסביבה עבודת גמר","s":"תואר 2"},{"d":"מדעי כדור הארץ והסביבה ראשי","s":"תואר 1"},{"d":"מדעי כדור הארץ והסביבה חד מחלקתי","s":"תואר 1"}],"סטטיסטיקה וניתוח נתונים":[{"d":"סטטיסטיקה וניתוח נתונים דו מחלקתי","s":"תואר 1"}],"מדעי הרפואה":[{"d":"מדעי הרפואה עם תיזה","s":"תואר 2"}],"מדעי המעבדה הרפואית":[{"d":"מדעי המעבדה הרפואית חד-מחלקתי","s":"תואר 1"}],"רפואת חרום":[{"d":"רפואת חרום חד-מחלקתי","s":"תואר 1"}],"ניהול מערכות בריאות":[{"d":"ניהול מערכות בריאות חד מחלקתי","s":"תואר 1"}],"יזמות וחדשנות":[{"d":"יזמות וחדשנות דו מחלקתי","s":"תואר 1"}],"רפואה ארבע שנתית":[{"d":"רפואה ארבע שנתית חד מחלקתי","s":"תואר 1"}],"הנדסה שנה א'":[{"d":"הנדסה שנה א' חד-מחלקתי - קמפוס אילת","s":"תואר 1","e":1}]};
+
+const departmentsList = Object.keys(programsData).sort();
+
+// State
+let currentTopic = null;
+let programSearchMode = false;
+let admissionSearchMode = false;
+let awaitingSubOption = null;
+let isTyping = false;
+
+const topics = {
+    counseling: { id: 'counseling', label: 'יעוץ לימודים', icon: '🎓' },
+    programs: { id: 'programs', label: 'תכניות לימוד', icon: '📚' },
+    admission: { id: 'admission', label: 'תנאי קבלה', icon: '✅' },
+    other: { id: 'other', label: 'נושאים אחרים', icon: '💡' },
+};
+
+const topicResponses = {
+    counseling: {
+        initial: 'שלום! 👋\n\nבחירת תואר היא החלטה חשובה ואני כאן כדי לעזור לך!\n\nכדי שאוכל להמליץ לך על תכניות לימוד מתאימות באוניברסיטת בן-גוריון בנגב, אשמח לדעת:\n\n<b>אילו תחומים מעניינים אותך?</b>\n\nאנא ציין 2-3 תחומים מהרשימה הבאה או אחרים:\n\n• <b>טיפולי</b> - פסיכולוגיה, עבודה סוציאלית, ריפוי בעיסוק\n• <b>מדעי</b> - ביולוגיה, כימיה, פיזיקה, מתמטיקה\n• <b>הנדסי</b> - הנדסת תוכנה, הנדסת חשמל, הנדסת מכונות\n• <b>פיננסי</b> - כלכלה, ניהול, חשבונאות\n• <b>יצירתי</b> - אמנות, עיצוב, ארכיטקטורה\n• <b>מחקרי</b> - מדעי המוח, ביוטכנולוגיה, מדעי הנתונים\n\nרוצה שאפרט על אחד התחומים?',
+        followUp: 'זה נשמע מעניין! באוניברסיטת בן-גוריון יש מגוון רחב של אפשרויות בתחום הזה. אשמח לשמוע עוד על הרקע שלך כדי להתאים לך את המסלול הנכון.',
+    },
+    programs: {
+        initial: 'בשמחה! 📚 באוניברסיטת בן-גוריון יש מגוון רחב של תכניות לימוד.\n\nמה מעניין אותך? הקלד/י מילה (למשל: מתמטיקה, הנדסה, פסיכולוגיה) ואני אציג לך את כל התכניות הרלוונטיות 👇',
+        followUp: 'רוצה לחפש תכנית נוספת? הקלד/י מילת חיפוש 👇',
+    },
+    admission: {
+        initial: 'אשמח לעזור עם מידע על תנאי קבלה! ✅\n\nאיך תרצה/י להתקדם?',
+        followUp: 'אעדכן אותך בפרטים המדויקים לגבי תנאי הקבלה לתכנית הזו.',
+        hasSubOptions: true,
+        subOptions: [
+            { id: 'check_my_data', label: 'אני רוצה לדעת למה אני יכול להתקבל עם הנתונים שלי', icon: '📊' },
+            { id: 'check_program', label: 'אני רוצה לבדוק תנאי קבלה לתכנית מסוימת', icon: '🔍' },
+        ],
+        subResponses: {
+            check_my_data: 'בוא/י לראות אילו תכניות מאפשר לך חתך הקבלה שלך ללמוד בקישור הבא:\n\n🔗 <a href="https://www.bgu.ac.il/welcome/ba/calculator/" target="_blank" style="color:#2563eb;text-decoration:underline">מחשבון קבלה - אוניברסיטת בן-גוריון</a>',
+            check_program: 'בשמחה! 🔍\n\nהקלד/י מילה כדי לחפש את התכנית שמעניינת אותך ואני אציג לך את תנאי הקבלה 👇',
+        },
+    },
+    other: {
+        initial: 'בשמחה! 💡 אוכל לסייע לך במגוון נושאים נוספים.\n\nבאיזה נושא תרצה/י עזרה?\n\n• <b>מלגות</b> - מלגות הצטיינות, מלגות סיוע, מלגות מחקר\n• <b>תכניות מצטיינים</b> - מסלולי הצטיינות ותכניות מיוחדות\n• <b>תכניות מיוחדות</b> - תואר כפול, לומדים על מדים, קמפוס אילת\n• <b>מעונות</b> - מעונות סטודנטים בקמפוס\n• <b>רישום</b> - תהליך ההרשמה ולוחות זמנים\n• <b>לימודי צבירה</b> - לימודים לפני קבלה רשמית',
+        followUp: 'יש לי מידע מפורט על הנושא הזה. בוא נצלול לפרטים!',
+    },
+};
+
+const chatArea = document.getElementById('chatArea');
+
+function scrollToBottom() {
+    setTimeout(() => chatArea.scrollTop = chatArea.scrollHeight, 50);
+}
+
+function createOtherTopicsHTML(excludeTopic) {
+    const others = Object.values(topics).filter(t => t.id !== excludeTopic);
+    return `
+        <div class="other-topics">
+            <span class="other-topics-label">נושאים נוספים:</span>
+            ${others.map(t => `<button class="topic-btn-small" onclick="handleTopicSelect('${t.id}')"><span>${t.icon}</span><span>${t.label}</span></button>`).join('')}
+        </div>
+    `;
+}
+
+function createMainTopicButtonsHTML() {
+    return `<div class="buttons-container">
+        ${Object.values(topics).map(t => `<button class="topic-btn" onclick="handleTopicSelect('${t.id}')"><span class="icon">${t.icon}</span><span>${t.label}</span></button>`).join('')}
+    </div>`;
+}
+
+function createSubOptionsHTML(topicId) {
+    const data = topicResponses[topicId];
+    if (!data.subOptions) return '';
+    return `<div class="buttons-container">
+        ${data.subOptions.map(o => `<button class="sub-option-btn" onclick="handleSubOptionSelect('${o.id}')"><span class="icon">${o.icon}</span><span>${o.label}</span></button>`).join('')}
+    </div>`;
+}
+
+function createProgramButtonsFromList(programsList) {
+    if (!programsList || programsList.length === 0) return '';
+    const ba = programsList.filter(p => p.s === 'תואר 1');
+    const ma = programsList.filter(p => p.s === 'תואר 2');
+    let html = '<div class="buttons-container">';
+    if (ba.length > 0) {
+        html += '<div class="program-section-label ba">📘 תואר ראשון</div>';
+        ba.forEach(p => {
+            const eilat = p.e ? '<span class="eilat-badge">אילת</span>' : '';
+            const deptBadge = p.dept ? `<span class="dept-badge">${p.dept}</span>` : '';
+            html += `<button class="program-btn" onclick='handleProgramSelect(${JSON.stringify(p).replace(/'/g, "&#39;")})'><span>🎓</span><span class="label">${p.d}</span>${eilat}${deptBadge}</button>`;
+        });
+    }
+    if (ma.length > 0) {
+        html += '<div class="program-section-label ma">📗 תואר שני</div>';
+        ma.forEach(p => {
+            const eilat = p.e ? '<span class="eilat-badge">אילת</span>' : '';
+            const deptBadge = p.dept ? `<span class="dept-badge">${p.dept}</span>` : '';
+            html += `<button class="program-btn ma" onclick='handleProgramSelect(${JSON.stringify(p).replace(/'/g, "&#39;")})'><span>🎓</span><span class="label">${p.d}</span>${eilat}${deptBadge}</button>`;
+        });
+    }
+    html += '</div>';
+    return html;
+}
+
+function searchPrograms(query) {
+    const results = [];
+    Object.entries(programsData).forEach(([deptName, programs]) => {
+        programs.forEach(p => {
+            if (p.d.includes(query)) {
+                results.push({ ...p, dept: deptName });
+            }
+        });
+    });
+    return results;
+}
+
+function addPolaMessage(text, extras = '') {
+    return `<div class="msg-pola-wrap">
+        <div class="msg-label">פולה היועצת הדיגיטלית</div>
+        <div class="msg-pola">
+            <p>${text}</p>
+            ${extras}
+        </div>
+    </div>`;
+}
+
+function addUserMessage(text) {
+    return `<div class="msg-user-wrap">
+        <div class="msg-user"><p>${text}</p></div>
+    </div>`;
+}
+
+function addSystemMessage(text) {
+    return `<div class="msg-system-wrap">
+        <div class="msg-system">${text}</div>
+    </div>`;
+}
+
+function showSearchBox() {
+    return `<div class="search-wrap" id="searchBox">
+        <div class="search-bubble">
+            <input type="text" class="search-input" id="searchInput" placeholder="🔍 הקלד מילת חיפוש..." oninput="handleSearchInput(this.value)" dir="rtl">
+            <div id="searchResults"></div>
+        </div>
+    </div>`;
+}
+
+function showTypingIndicator() {
+    return `<div class="typing-wrap" id="typingIndicator">
+        <div class="msg-label">פולה היועצת הדיגיטלית</div>
+        <div class="typing-bubble">
+            <div class="typing-dot"></div>
+            <div class="typing-dot"></div>
+            <div class="typing-dot"></div>
+        </div>
+    </div>`;
+}
+
+function updateTopicBadge() {
+    const badge = document.getElementById('topicBadge');
+    if (currentTopic) {
+        badge.textContent = topics[currentTopic].icon + ' ' + topics[currentTopic].label;
+        badge.classList.add('visible');
+    } else {
+        badge.classList.remove('visible');
+    }
+}
+
+// Initialize welcome message
+function init() {
+    chatArea.innerHTML = addPolaMessage(
+        'היי, נעים להכיר! 😊 אני פולה 👋 יועצת אקדמית דיגיטלית של אוניברסיטת בן-גוריון בנגב 🎓\n\nאני כאן כדי לעזור לך!\n\nאתה יכול לשאול אותי על:\n• תכניות לימוד 📚\n• יעוץ אקדמי ובחירת תואר 🎓\n• תנאי קבלה ✅\n• מלגות, מעונות ונושאים נוספים 💡\n\nפשוט כתב/י לי בחופשיות מה מעניין אותך ואני אעזור! 😊',
+        ''
+    );
+}
+
+function handleTopicSelect(topicId) {
+    const topic = topics[topicId];
+    const topicData = topicResponses[topicId];
+    const isSwitch = currentTopic !== null && currentTopic !== topicId;
+
+    if (isSwitch) {
+        chatArea.innerHTML += addSystemMessage(`עברת לנושא: ${topic.label} ${topic.icon}`);
+    }
+
+    currentTopic = topicId;
+    programSearchMode = false;
+    admissionSearchMode = false;
+    awaitingSubOption = null;
+    updateTopicBadge();
+
+    // Remove existing search box
+    const existing = document.getElementById('searchBox');
+    if (existing) existing.remove();
+
+    // Show typing then message
+    chatArea.innerHTML += showTypingIndicator();
+    scrollToBottom();
+
+    setTimeout(() => {
+        const typing = document.getElementById('typingIndicator');
+        if (typing) typing.remove();
+
+        if (topicId === 'programs') {
+            programSearchMode = true;
+            chatArea.innerHTML += addPolaMessage(topicData.initial, createOtherTopicsHTML(topicId));
+            chatArea.innerHTML += showSearchBox();
+            scrollToBottom();
+            setTimeout(() => {
+                const input = document.getElementById('searchInput');
+                if (input) input.focus();
+            }, 100);
+        } else if (topicData.hasSubOptions) {
+            awaitingSubOption = topicId;
+            chatArea.innerHTML += addPolaMessage(topicData.initial, createSubOptionsHTML(topicId));
+        } else {
+            chatArea.innerHTML += addPolaMessage(topicData.initial, createOtherTopicsHTML(topicId));
+        }
+        scrollToBottom();
+    }, 800);
+}
+
+function handleSubOptionSelect(subOptionId) {
+    const topicData = topicResponses[awaitingSubOption];
+    const subOption = topicData.subOptions.find(s => s.id === subOptionId);
+
+    chatArea.innerHTML += addUserMessage(subOption.label);
+    awaitingSubOption = null;
+
+    chatArea.innerHTML += showTypingIndicator();
+    scrollToBottom();
+
+    setTimeout(() => {
+        const typing = document.getElementById('typingIndicator');
+        if (typing) typing.remove();
+
+        if (subOptionId === 'check_program') {
+            admissionSearchMode = true;
+            chatArea.innerHTML += addPolaMessage(topicData.subResponses[subOptionId], createOtherTopicsHTML(currentTopic));
+            chatArea.innerHTML += showSearchBox();
+            scrollToBottom();
+            setTimeout(() => {
+                const input = document.getElementById('searchInput');
+                if (input) input.focus();
+            }, 100);
+        } else {
+            chatArea.innerHTML += addPolaMessage(topicData.subResponses[subOptionId], createOtherTopicsHTML(currentTopic));
+            scrollToBottom();
+        }
+    }, 800);
+}
+
+let searchTimeout = null;
+
+function handleSearchInput(value) {
+    const resultsDiv = document.getElementById('searchResults');
+    if (!value || value.length < 2) {
+        resultsDiv.innerHTML = '';
+        return;
+    }
+
+    // Debounce search
+    clearTimeout(searchTimeout);
+    searchTimeout = setTimeout(() => {
+        const matches = searchPrograms(value);
+        if (matches.length === 0) {
+            resultsDiv.innerHTML = '<div class="search-no-results">לא נמצאו תכניות תואמות 😔</div>';
+            return;
+        }
+
+        resultsDiv.innerHTML = `<div class="search-no-results" style="color:#6b7280;cursor:pointer;font-weight:600" onclick="handleShowResults('${value.replace(/'/g, "\\'")}')">נמצאו ${matches.length} תכניות - לחץ להצגה</div>`;
+    }, 300);
+}
+
+function handleShowResults(query) {
+    const searchBox = document.getElementById('searchBox');
+    if (searchBox) searchBox.remove();
+    const isAdmission = admissionSearchMode;
+    programSearchMode = false;
+    admissionSearchMode = false;
+
+    chatArea.innerHTML += addUserMessage(query);
+
+    const matches = searchPrograms(query);
+    const ba = matches.filter(p => p.s === 'תואר 1');
+    const ma = matches.filter(p => p.s === 'תואר 2');
+
+    let text;
+    if (isAdmission) {
+        text = `מצאתי ${matches.length} תכניות שמכילות "${query}" 🎯\n\n`;
+        if (ba.length > 0) text += `📘 ${ba.length} תכניות תואר ראשון\n`;
+        if (ma.length > 0) text += `📗 ${ma.length} תכניות תואר שני\n`;
+        text += '\nבחר/י תכנית כדי לראות את תנאי הקבלה שלה:';
+    } else {
+        text = `מצאתי ${matches.length} תכניות שמכילות "${query}" 🎯\n\n`;
+        if (ba.length > 0) text += `📘 ${ba.length} תכניות תואר ראשון\n`;
+        if (ma.length > 0) text += `📗 ${ma.length} תכניות תואר שני\n`;
+        text += '\nבחר/י תכנית שמעניינת אותך:';
+    }
+
+    // Tag matches with admission context
+    if (isAdmission) {
+        matches.forEach(m => m.admissionMode = true);
+    }
+
+    chatArea.innerHTML += showTypingIndicator();
+    scrollToBottom();
+
+    setTimeout(() => {
+        const typing = document.getElementById('typingIndicator');
+        if (typing) typing.remove();
+        chatArea.innerHTML += addPolaMessage(text, createProgramButtonsFromList(matches));
+        scrollToBottom();
+    }, 800);
+}
+
+function handleProgramSelect(program) {
+    chatArea.innerHTML += addUserMessage(program.d);
+
+    const eilatText = program.e ? ' (קמפוס אילת 🏖️)' : '';
+    const degreeText = program.s === 'תואר 1' ? 'תואר ראשון' : 'תואר שני';
+
+    chatArea.innerHTML += showTypingIndicator();
+    scrollToBottom();
+
+    setTimeout(() => {
+        const typing = document.getElementById('typingIndicator');
+        if (typing) typing.remove();
+
+        const deptText = program.dept ? `\n🏛️ מחלקה: ${program.dept}` : '';
+
+        if (program.admissionMode) {
+            const deptName = program.dept || '';
+            const responseText = `תנאי הקבלה למחלקה ל${deptName} באוניברסיטת בן-גוריון בנגב:\n\nכדי להתקבל למחלקה, עליך לעמוד באחת מהאפשרויות הבאות:\n\n<b>אפשרויות קבלה:</b>\n\nמתמטיקה 5 יחידות – ציון 87\nאו חלופות:\n\n• פסיכומטרי – חשיבה כמותית 137 ומעלה + מתמטיקה 5 יחידות בציון עובר\n\n• פסיכומטרי – חשיבה כמותית 127 ומעלה + פיזיקה 5 יחידות בציון 82 + מתמטיקה 5 יחידות בציון עובר\n\n• מתמטיקה 5 יחידות בציון 82 + פיזיקה 5 יחידות בציון 82\n\n• סכם כללי 700 + פסיכומטרי – חשיבה כמותית 127 ומעלה + מתמטיקה:\n  • 5 יחידות בציון 75 או\n  • 4 יחידות בציון 85\n\n<b>דרישות נוספות:</b>\n• אנגלית – רמה "בסיסי"\n• עברית – רמה ה' (למי שנדרש)\n\n<b>הערות חשובות:</b>\n• מועמדים עם 4 יחידות מתמטיקה וחשיבה כמותית 140 ומעלה יועברו לדיון במחלקה\n• ההרשמה לסמסטר ב' סגורה\n\nרוצה פרטים נוספים על התכנית או מידע על תכניות נוספות? 👇`;
+            chatArea.innerHTML += addPolaMessage(responseText, createOtherTopicsHTML('admission'));
+
+            admissionSearchMode = true;
+            chatArea.innerHTML += showSearchBox();
+        } else {
+            const deptName = program.dept || '';
+            const campusText = program.e ? 'אילת' : 'באר שבע';
+            const degreeType = program.s === 'תואר 1' ? 'B.Sc.' : 'M.Sc.';
+            const durationText = program.s === 'תואר 1' ? '3 שנים' : '2 שנים';
+            const responseText = `תכנית ${deptName} באוניברסיטת בן-גוריון בנגב\n\n<b>פרטי התואר:</b>\n• תואר: ${degreeType} ב${deptName}\n• קמפוס: ${campusText}\n• משך לימודים: ${durationText}\n• סטטוס רישום: סגור כרגע\n\n<b>אודות התכנית:</b>\nבית הספר למדעי המוח ולקוגניציה מעניק השכלה איכותית המכינה לקריירה מצליחה בתחום.\n\n<b>תחומי לימוד מרכזיים:</b>\n• חישוב קוגניטיבי\n• עיבוד מדדים קוגניטיביים ומוחיים\n• נוירוביולוגיה\n• פסיכולוגיה קוגניטיבית\n• מדעי העצב\n\n<b>תואר משולב - מדעי המוח והקוגניציה + מדעי המחשב:</b>\nחיבור אסטרטגי בין הבנת המוח האנושי לבין יכולות חישוביות מתקדמות:\n• למידת מכונה\n• בינה מלאכותית\n• ניתוח רשתות עצביות\n• פיתוח מודלים חישוביים\n\n<b>תעסוקה:</b>\nבוגרי התוכנית משתלבים בתפקידים מרתקים בתעשיות עתירות ידע. התחום צובר תאוצה בארץ ובעולם.\n\n<b>תוכנית ההתחל"ה:</b>\nתוכנית ייחודית המלווה סטודנטים בסמסטר הראשון - התנסות, הכנה, תגבור וחניכה.\n\n<b>יצירת קשר:</b> brain.school@bgu.ac.il\n\n🔗 <a href="https://www.bgu.ac.il" target="_blank" style="color:#2563eb;text-decoration:underline">${deptName} - אוניברסיטת בן-גוריון</a>\n\nרוצה פרטים נוספים על התכנית או מידע על תנאי הקבלה? 👇`;
+            chatArea.innerHTML += addPolaMessage(responseText, createOtherTopicsHTML('programs'));
+
+            programSearchMode = true;
+            chatArea.innerHTML += showSearchBox();
+        }
+        scrollToBottom();
+    }, 800);
+}
+
+function detectIntent(text) {
+    const lowerText = text.toLowerCase();
+
+    // Keywords for each topic
+    const keywords = {
+        programs: ['תכנית', 'תכניות', 'לימוד', 'לימודים', 'תואר', 'מה ללמוד', 'ללמוד', 'לומד', 'מסלול', 'חוג', 'מחלקה'],
+        counseling: ['יעוץ', 'ייעוץ', 'לא יודע', 'עזרה בבחירה', 'מה מתאים', 'לא בטוח', 'המלצה', 'להמליץ', 'איזה תחום', 'תחום לימוד', 'בחירה'],
+        admission: ['קבלה', 'תנאי קבלה', 'להתקבל', 'התקבלות', 'פסיכומטרי', 'בגרות', 'ציון', 'חתך', 'בחינה', 'מבחן'],
+        other: ['מלגה', 'מלגות', 'מעונות', 'מעון', 'רישום', 'הרשמה', 'להירשם', 'מצטיינים', 'צבירה', 'תכניות מיוחדות']
+    };
+
+    // Check each topic's keywords
+    for (const [topic, words] of Object.entries(keywords)) {
+        for (const word of words) {
+            if (lowerText.includes(word)) {
+                return topic;
+            }
+        }
+    }
+
+    return null;
+}
+
+function handleQuestionnaireStart() {
+    chatArea.innerHTML += addUserMessage('מעבר לשאלון התאמה');
+    chatArea.innerHTML += addPolaMessage('מעולה! 📝\n\nהשאלון יעזור לנו למצוא את התחומים המתאימים לך ביותר.\n\n🔗 <a href="https://www.bgu.ac.il/welcome/ba/questionnaire/" target="_blank" style="color:#2563eb;text-decoration:underline">מעבר לשאלון הולנד</a>', createOtherTopicsHTML('counseling'));
+    scrollToBottom();
+}
+
+function handleSendMessage() {
+    const input = document.getElementById('msgInput');
+    const value = input.value.trim();
+    if (!value) return;
+
+    chatArea.innerHTML += addUserMessage(value);
+    input.value = '';
+
+    if (currentTopic) {
+        // User is already in a topic - handle followUp
+        chatArea.innerHTML += showTypingIndicator();
+        scrollToBottom();
+
+        setTimeout(() => {
+            const typing = document.getElementById('typingIndicator');
+            if (typing) typing.remove();
+
+            if (currentTopic === 'counseling') {
+                // Show Holland questionnaire prompt
+                const questionnaireText = 'יש לנו שאלון, המונה 30 שאלות, שיכול לסייע לך בזיהוי תחומים שמתאימים לך.\n\nהאם תרצה להתחיל?\n\nהשאלון מבוסס על מודל הולנד ויעזור לנו להתאים תוכניות לימוד על פי תחומי העניין והכישורים שלך.';
+                const questionnaireBtn = `<div class="buttons-container" style="margin-top:12px"><button class="topic-btn" onclick="handleQuestionnaireStart()"><span class="icon">📝</span><span>מעבר לשאלון התאמה</span></button></div>`;
+                chatArea.innerHTML += addPolaMessage(questionnaireText, questionnaireBtn + createOtherTopicsHTML(currentTopic));
+            } else {
+                chatArea.innerHTML += addPolaMessage(topicResponses[currentTopic].followUp, createOtherTopicsHTML(currentTopic));
+            }
+
+            if (currentTopic === 'programs') {
+                programSearchMode = true;
+                chatArea.innerHTML += showSearchBox();
+            }
+            scrollToBottom();
+        }, 800);
+    } else {
+        // No topic selected yet - detect intent from user's message
+        const detectedTopic = detectIntent(value);
+
+        if (detectedTopic) {
+            // Intent detected - activate that topic
+            handleTopicSelect(detectedTopic);
+        } else {
+            // No intent detected - ask for clarification
+            chatArea.innerHTML += showTypingIndicator();
+            scrollToBottom();
+
+            setTimeout(() => {
+                const typing = document.getElementById('typingIndicator');
+                if (typing) typing.remove();
+                chatArea.innerHTML += addPolaMessage(
+                    'אני כאן כדי לעזור! 😊\n\nאשמח אם תוכל/י לפרט מעט יותר - \nעל איזה נושא תרצה/י לשמוע?\n\n• תכניות לימוד 📚\n• יעוץ לימודים 🎓\n• תנאי קבלה ✅\n• מלגות ומעונות 💡',
+                    ''
+                );
+                scrollToBottom();
+            }, 800);
+        }
+    }
+}
+
+// Start
+init();
+</script>
+</body>
+</html>
