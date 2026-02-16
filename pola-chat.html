@@ -266,6 +266,30 @@ let admissionSearchMode = false;
 let awaitingSubOption = null;
 let isTyping = false;
 
+// New state variables for multi-step program conversation
+let programsFlowState = null; // States: 'awaiting_field', 'awaiting_combination_or_admission', 'awaiting_combination_category', 'awaiting_program_type'
+let selectedDepartment = null;
+let selectedCombinationCategory = null;
+
+// Department descriptions
+const departmentDescriptions = {
+    'פיסיקה': 'המחלקה לפיזיקה מעניקה תובנה לגבי פעולות היסוד של היקום. פיזיקה משקפת את המאמץ של המין האנושי להבין ממה העולם מורכב ואיך הוא פועל. הטכנולוגיה של העתיד מבוססת על הפיזיקה של ההווה. האלקטרוניקה הקוונטית של העתיד והביו-טכנולוגיה של העתיד, והטכנולוגיות שעוד לא חלמנו עליהן, כולן יהיו מבוססות על פיזיקה שאתם יכולים ללמוד היום. המחלקה לפיזיקה שמה לה למטרה להעניק לתלמידינו את ההשכלה הגבוהה האיכותית ביותר שתכין אותם לקריירה מצליחה.\nהבוגרים של המחלקה לפיזיקה מבוקשים בכל התחומים בשוק העבודה, מהתעשיות הביטחוניות דרך כל ענפי ההייטק ועד לביוטק ופינטק, ובכל התחומים במדעי הטבע וההנדסה באקדמיה.',
+    // Add more departments as needed
+};
+
+// Combination categories mapping
+const combinationCategories = {
+    'טיפולי': ['פסיכולוגיה', 'עבודה סוציאלית', 'ריפוי בעיסוק'],
+    'מדעי': ['ביולוגיה', 'כימיה', 'פיזיקה', 'מתמטיקה'],
+    'הנדסי': ['הנדסה', 'מדעי המחשב'],
+    'פיננסי': ['כלכלה', 'ניהול', 'חשבונאות'],
+    'יצירתי': ['אמנות', 'עיצוב', 'ארכיטקטורה'],
+    'מחקרי': ['מדעי המוח', 'ביוטכנולוגיה'],
+    'חברתי': ['סוציולוגיה', 'אנתרופולוגיה', 'פוליטיקה'],
+    'חינוכי': ['חינוך', 'הוראה'],
+    'ניהולי': ['ניהול', 'מנהל עסקים']
+};
+
 const topics = {
     counseling: { id: 'counseling', label: 'יעוץ לימודים', icon: '🎓' },
     programs: { id: 'programs', label: 'תכניות לימוד', icon: '📚' },
@@ -441,6 +465,16 @@ function handleTopicSelect(topicId) {
     programSearchMode = false;
     admissionSearchMode = false;
     awaitingSubOption = null;
+
+    // Initialize programs flow state
+    if (topicId === 'programs') {
+        programsFlowState = 'awaiting_field';
+        selectedDepartment = null;
+        selectedCombinationCategory = null;
+    } else {
+        programsFlowState = null;
+    }
+
     // updateTopicBadge(); // Removed for natural conversation flow
 
     // Remove existing search box
@@ -628,10 +662,181 @@ function detectIntent(text) {
     return null;
 }
 
+function handleCombinationChoice() {
+    chatArea.innerHTML += addUserMessage('שילובים');
+    chatArea.innerHTML += showTypingIndicator();
+    scrollToBottom();
+
+    setTimeout(() => {
+        const typing = document.getElementById('typingIndicator');
+        if (typing) typing.remove();
+
+        programsFlowState = 'awaiting_combination_category';
+        const msg = `מעולה! 🔗\n\nבאילו מתחומי התוכן הבאים אתה מעוניין לשלב את לימודי ה${selectedDepartment}?\n\nאנא הקלד/י אחד מהתחומים:\n• טיפולי\n• מדעי\n• הנדסי\n• פיננסי\n• יצירתי\n• מחקרי\n• חברתי\n• חינוכי\n• ניהולי`;
+        chatArea.innerHTML += addPolaMessage(msg, '');
+        scrollToBottom();
+    }, 800);
+}
+
+function handleAdmissionChoice() {
+    chatArea.innerHTML += addUserMessage('תנאי קבלה');
+    chatArea.innerHTML += showTypingIndicator();
+    scrollToBottom();
+
+    setTimeout(() => {
+        const typing = document.getElementById('typingIndicator');
+        if (typing) typing.remove();
+
+        // Transfer to admission module
+        currentTopic = 'admission';
+        programsFlowState = null;
+        selectedDepartment = null;
+
+        chatArea.innerHTML += addPolaMessage('מעביר אותך למודול תנאי קבלה... ✅', '');
+        setTimeout(() => {
+            handleTopicSelect('admission');
+        }, 1000);
+    }, 800);
+}
+
+function handleProgramType(programType) {
+    chatArea.innerHTML += addUserMessage(programType);
+    chatArea.innerHTML += showTypingIndicator();
+    scrollToBottom();
+
+    setTimeout(() => {
+        const typing = document.getElementById('typingIndicator');
+        if (typing) typing.remove();
+
+        // Filter programs based on department, combination category, and program type
+        const matchingPrograms = filterProgramsByCriteria(selectedDepartment, selectedCombinationCategory, programType);
+
+        if (matchingPrograms.length > 0) {
+            chatArea.innerHTML += addPolaMessage(`נמצאו ${matchingPrograms.length} תכניות שעונות על הקריטריונים שלך:`, '');
+            chatArea.innerHTML += createProgramButtonsFromList(matchingPrograms);
+        } else {
+            chatArea.innerHTML += addPolaMessage('לא נמצאו תכניות שעונות על הקריטריונים. נסה/י שילוב אחר או חפש/י תכנית ספציפית.', '');
+        }
+
+        // Reset state
+        programsFlowState = 'awaiting_field';
+        selectedDepartment = null;
+        selectedCombinationCategory = null;
+
+        scrollToBottom();
+    }, 800);
+}
+
+function filterProgramsByCriteria(department, combinationCategory, programType) {
+    // This is a placeholder - you'll need to implement the actual filtering logic
+    // based on your programsData structure
+    const results = [];
+
+    // Search through all programs
+    for (const dept of programsData) {
+        for (const program of dept.programs) {
+            const programName = program.name.toLowerCase();
+            const deptName = dept.department.toLowerCase();
+
+            // Check if it matches department
+            if (!deptName.includes(department.toLowerCase()) && !programName.includes(department.toLowerCase())) {
+                continue;
+            }
+
+            // Check if it matches combination category (search for related keywords in program name)
+            const categoryKeywords = combinationCategories[combinationCategory] || [];
+            let matchesCategory = false;
+            for (const keyword of categoryKeywords) {
+                if (programName.includes(keyword.toLowerCase()) || deptName.includes(keyword.toLowerCase())) {
+                    matchesCategory = true;
+                    break;
+                }
+            }
+            if (!matchesCategory) continue;
+
+            // Check program type (this is approximate - you may need to adjust based on actual data)
+            if (programType === 'דו-מחלקתי' && !programName.includes('דו-מחלקתי')) continue;
+            if (programType === 'חטיבה ראשית' && (programName.includes('דו-מחלקתי') || programName.includes('תואר כפול'))) continue;
+            if (programType === 'תואר כפול' && !programName.includes('תואר כפול')) continue;
+
+            results.push(program);
+        }
+    }
+
+    return results;
+}
+
 function handleQuestionnaireStart() {
     chatArea.innerHTML += addUserMessage('מעבר לשאלון התאמה');
     chatArea.innerHTML += addPolaMessage('מעולה! 📝\n\nהשאלון יעזור לנו למצוא את התחומים המתאימים לך ביותר.\n\n🔗 <a href="https://www.bgu.ac.il/welcome/ba/questionnaire/" target="_blank" style="color:#2563eb;text-decoration:underline">מעבר לשאלון הולנד</a>', '');
     scrollToBottom();
+}
+
+function detectDepartmentName(text) {
+    const lowerText = text.toLowerCase();
+    for (const dept of Object.keys(departmentDescriptions)) {
+        if (lowerText.includes(dept.toLowerCase())) {
+            return dept;
+        }
+    }
+    return null;
+}
+
+function handleProgramsFlow(userInput) {
+    const lowerInput = userInput.toLowerCase();
+
+    // State: awaiting department field (initial state)
+    if (!programsFlowState || programsFlowState === 'awaiting_field') {
+        const detectedDept = detectDepartmentName(userInput);
+
+        if (detectedDept && departmentDescriptions[detectedDept]) {
+            // Found a department - show description
+            selectedDepartment = detectedDept;
+            programsFlowState = 'awaiting_combination_or_admission';
+
+            const deptDesc = departmentDescriptions[detectedDept];
+            const buttons = `
+                <div class="buttons-container" style="margin-top:12px;display:flex;flex-direction:column;gap:8px;">
+                    <button class="topic-btn" onclick="handleCombinationChoice()"><span class="icon">🔗</span><span>שילובים</span></button>
+                    <button class="topic-btn" onclick="handleAdmissionChoice()"><span class="icon">✅</span><span>תנאי קבלה</span></button>
+                </div>
+            `;
+            chatArea.innerHTML += addPolaMessage(deptDesc + '\n\nהאם אתה מעוניין לשמוע על שילובים או על תנאי קבלה?', buttons);
+        } else {
+            // No department detected - ask for clarification
+            chatArea.innerHTML += addPolaMessage('לא זיהיתי את התחום. אנא נסה/י שוב (למשל: פיסיקה, מתמטיקה, פסיכולוגיה)', '');
+        }
+        scrollToBottom();
+    }
+    // State: awaiting combination category
+    else if (programsFlowState === 'awaiting_combination_category') {
+        // Detect which category they chose
+        let detectedCategory = null;
+        for (const category of Object.keys(combinationCategories)) {
+            if (lowerInput.includes(category.toLowerCase())) {
+                detectedCategory = category;
+                break;
+            }
+        }
+
+        if (detectedCategory) {
+            selectedCombinationCategory = detectedCategory;
+            programsFlowState = 'awaiting_program_type';
+
+            const msg = `לאוניברסיטת בן-גוריון יש מסלולים מרתקים בתחום ה${detectedCategory}.\n\nהאם המסלול שמעניין אותך הוא:`;
+            const buttons = `
+                <div class="buttons-container" style="margin-top:12px;display:flex;flex-direction:column;gap:8px;">
+                    <button class="topic-btn" onclick="handleProgramType('דו-מחלקתי')"><span class="icon">🔗</span><span>דו-מחלקתי</span></button>
+                    <button class="topic-btn" onclick="handleProgramType('חטיבה ראשית')"><span class="icon">📚</span><span>חטיבה ראשית</span></button>
+                    <button class="topic-btn" onclick="handleProgramType('תואר כפול')"><span class="icon">🎓</span><span>תואר כפול</span></button>
+                </div>
+            `;
+            chatArea.innerHTML += addPolaMessage(msg, buttons);
+        } else {
+            chatArea.innerHTML += addPolaMessage('לא זיהיתי את התחום. אנא בחר/י אחד מהתחומים: טיפולי, מדעי, הנדסי, פיננסי, יצירתי, מחקרי, חברתי, חינוכי, ניהולי', '');
+        }
+        scrollToBottom();
+    }
 }
 
 function handleSendMessage() {
@@ -656,15 +861,13 @@ function handleSendMessage() {
                 const questionnaireText = 'יש לנו שאלון, המונה 30 שאלות, שיכול לסייע לך בזיהוי תחומים שמתאימים לך.\n\nהאם תרצה להתחיל?\n\nהשאלון מבוסס על מודל הולנד ויעזור לנו להתאים תוכניות לימוד על פי תחומי העניין והכישורים שלך.';
                 const questionnaireBtn = `<div class="buttons-container" style="margin-top:12px"><button class="topic-btn" onclick="handleQuestionnaireStart()"><span class="icon">📝</span><span>מעבר לשאלון התאמה</span></button></div>`;
                 chatArea.innerHTML += addPolaMessage(questionnaireText, questionnaireBtn + '');
+                scrollToBottom();
+            } else if (currentTopic === 'programs') {
+                handleProgramsFlow(value);
             } else {
                 chatArea.innerHTML += addPolaMessage(topicResponses[currentTopic].followUp, '');
+                scrollToBottom();
             }
-
-            if (currentTopic === 'programs') {
-                programSearchMode = true;
-                chatArea.innerHTML += showSearchBox();
-            }
-            scrollToBottom();
         }, 800);
     } else {
         // No topic selected yet - detect intent from user's message
@@ -682,7 +885,7 @@ function handleSendMessage() {
                 const typing = document.getElementById('typingIndicator');
                 if (typing) typing.remove();
                 chatArea.innerHTML += addPolaMessage(
-                    'אני כאן כדי לעזור! 😊\n\nאשמח אם תוכל/י לפרט מעט יותר - \nעל איזה נושא תרצה/י לשמוע?\n\n• תכניות לימוד 📚\n• יעוץ לימודים 🎓\n• תנאי קבלה ✅\n• מלגות ומעונות 💡',
+                    'אני כאן כדי לעזור! 😊\n\nאשמח אך תוכל/י לפרט מעט יותר - \nעל איזה נושא תרצה/י לשמוע?\n\n• תכניות לימוד 📚\n• יעוץ לימודים 🎓\n• תנאי קבלה ✅\n• מלגות ומעונות 💡',
                     ''
                 );
                 scrollToBottom();
