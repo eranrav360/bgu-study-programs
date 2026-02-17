@@ -870,15 +870,12 @@ function countProgramsByDeptAndCategory(department, combinationCategory) {
     let count = 0;
     const categoryKeywords = combinationCategories[combinationCategory] || [];
 
-    // Count all programs in the category (no department filter)
-    // - these represent all possible combination partners
-    for (const dept of programsData) {
-        for (const program of dept.programs) {
-            const programName = program.name.toLowerCase();
-            const deptName = dept.department.toLowerCase();
-
+    for (const [deptName, programs] of Object.entries(programsData)) {
+        const dept = deptName.toLowerCase();
+        for (const program of programs) {
+            const progName = program.d.toLowerCase();
             for (const keyword of categoryKeywords) {
-                if (programName.includes(keyword.toLowerCase()) || deptName.includes(keyword.toLowerCase())) {
+                if (progName.includes(keyword.toLowerCase()) || dept.includes(keyword.toLowerCase())) {
                     count++;
                     break;
                 }
@@ -889,40 +886,33 @@ function countProgramsByDeptAndCategory(department, combinationCategory) {
 }
 
 function filterProgramsByCriteria(department, combinationCategory, programType) {
-    // This is a placeholder - you'll need to implement the actual filtering logic
-    // based on your programsData structure
     const results = [];
+    const categoryKeywords = combinationCategories[combinationCategory] || [];
 
-    // Search through all programs matching ALL criteria
-    for (const dept of programsData) {
-        for (const program of dept.programs) {
-            const programName = program.name.toLowerCase();
-            const deptName = dept.department.toLowerCase();
+    for (const [deptName, programs] of Object.entries(programsData)) {
+        const dept = deptName.toLowerCase();
 
-            // Check if it matches the original department (physics, etc.)
-            const matchesDepartment = deptName.includes(department.toLowerCase()) || programName.includes(department.toLowerCase());
-            if (!matchesDepartment) continue;
+        for (const program of programs) {
+            const progName = program.d.toLowerCase();
 
-            // Check if it matches combination category (educational, etc.)
-            const categoryKeywords = combinationCategories[combinationCategory] || [];
+            // Must match combination category
             let matchesCategory = false;
             for (const keyword of categoryKeywords) {
-                if (programName.includes(keyword.toLowerCase()) || deptName.includes(keyword.toLowerCase())) {
+                if (progName.includes(keyword.toLowerCase()) || dept.includes(keyword.toLowerCase())) {
                     matchesCategory = true;
                     break;
                 }
             }
             if (!matchesCategory) continue;
 
-            // Check program type (dual-major, etc.)
-            if (programType === 'דו-מחלקתי' && !programName.includes('דו-מחלקתי')) continue;
-            if (programType === 'חטיבה ראשית' && (programName.includes('דו-מחלקתי') || programName.includes('תואר כפול'))) continue;
-            if (programType === 'תואר כפול' && !programName.includes('תואר כפול')) continue;
+            // Must match program type
+            if (programType === 'דו-מחלקתי' && !progName.includes('דו-מחלקתי') && !progName.includes('דו מחלקתי')) continue;
+            if (programType === 'חטיבה ראשית' && !progName.includes('ראשי') && !progName.includes('ראשית')) continue;
+            if (programType === 'תואר כפול' && !progName.includes('כפול') && !progName.includes('משולב')) continue;
 
-            results.push(program);
+            results.push({ ...program, dept: deptName });
         }
     }
-
     return results;
 }
 
