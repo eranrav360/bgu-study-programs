@@ -681,14 +681,8 @@ function handleSemesterChoice(semester) {
         selectedSemester = semester;
         admissionFlowState = 'awaiting_grade_input_method';
 
-        const msg = `מעולה! נבדוק את תנאי הקבלה לסמסטר ${semester}.\n\nאיך תרצה/י להמשיך?`;
-        const gradeInputButtons = `
-            <div class="buttons-container" style="margin-top:12px;display:flex;flex-direction:column;gap:8px;">
-                <button class="topic-btn" onclick="handleGradeInputMethod('upload')"><span class="icon">📤</span><span>להעלות מסמכי ציונים</span></button>
-                <button class="topic-btn" onclick="handleGradeInputMethod('manual')"><span class="icon">⌨️</span><span>להזין ציונים ידנית</span></button>
-            </div>
-        `;
-        chatArea.innerHTML += addPolaMessage(msg, gradeInputButtons);
+        const msg = `מעולה! נבדוק את תנאי הקבלה לסמסטר ${semester}.\n\nהאם תרצה להעלות את ציוני הבגרות והפסיכומטרי שלך, לבדוק תנאי קבלה לתכנית ספציפית, או לקבל הפניה למחשבון באתר האוניברסיטה?`;
+        chatArea.innerHTML += addPolaMessage(msg, '');
         scrollToBottom();
     }, 800);
 }
@@ -744,7 +738,7 @@ function handleAdmissionFlow(userInput) {
         if (semester) {
             selectedSemester = semester;
             admissionFlowState = 'awaiting_grade_input_method';
-            chatArea.innerHTML += addPolaMessage(`מעולה! נבדוק את תנאי הקבלה לסמסטר ${semester}.\n\nאיך תרצה/י להמשיך?`, '');
+            chatArea.innerHTML += addPolaMessage(`מעולה! נבדוק את תנאי הקבלה לסמסטר ${semester}.\n\nהאם תרצה להעלות את ציוני הבגרות והפסיכומטרי שלך, לבדוק תנאי קבלה לתכנית ספציפית, או לקבל הפניה למחשבון באתר האוניברסיטה?`, '');
         } else {
             chatArea.innerHTML += addPolaMessage('לא זיהיתי את הסמסטר. על איזה סמסטר דיברנו?', '');
         }
@@ -752,14 +746,22 @@ function handleAdmissionFlow(userInput) {
     }
     // State: awaiting grade input method
     else if (admissionFlowState === 'awaiting_grade_input_method') {
-        if (lowerInput.includes('העלו') || lowerInput.includes('העל') || lowerInput.includes('מסמך') || lowerInput.includes('קוב')) {
-            chatArea.innerHTML += addPolaMessage(`נהדר! 📤\n\nתכונת העלאת קבצים תהיה זמינה בקרוב! 🚧\n\nבינתיים, אנא הזן/י את הציונים שלך ידנית או השתמש/י במחשבון הקבלה שלנו:\n\n🔗 <a href="https://www.bgu.ac.il/welcome/ba/calculator/" target="_blank" style="color:#2563eb;text-decoration:underline">מחשבון קבלה - אוניברסיטת בן-גוריון</a>`, '');
+        if (lowerInput.includes('מחשבון') || lowerInput.includes('אתר') || lowerInput.includes('הפניה') || lowerInput.includes('קישור')) {
+            // Option 3: Calculator link
+            chatArea.innerHTML += addPolaMessage(`כמובן! 🔗\n\nמחשבון הקבלה של אוניברסיטת בן-גוריון:\n\n<a href="https://www.bgu.ac.il/welcome/ba/calculator/" target="_blank" style="color:#2563eb;text-decoration:underline">מחשבון קבלה - אוניברסיטת בן-גוריון</a>`, '');
             admissionFlowState = null;
-        } else if (lowerInput.includes('ידנ') || lowerInput.includes('הזנ') || lowerInput.includes('הקלד')) {
+        } else if (lowerInput.includes('תכנית') || lowerInput.includes('ספציפי') || lowerInput.includes('מסוימת') || lowerInput.includes('לבדוק')) {
+            // Option 2: Check specific program
+            admissionSearchMode = true;
+            admissionFlowState = null;
+            chatArea.innerHTML += addPolaMessage('בשמחה! 🔍\n\nאיזו תכנית מעניינת אותך?', '');
+            chatArea.innerHTML += showSearchBox();
+        } else if (lowerInput.includes('העל') || lowerInput.includes('ציונ') || lowerInput.includes('בגרות') || lowerInput.includes('פסיכומטרי')) {
+            // Option 1: Upload/enter grades
             admissionFlowState = 'awaiting_grades_input';
-            chatArea.innerHTML += addPolaMessage(`מצוין! ⌨️\n\nבוא/י נזין את הציונים שלך (למשל: בגרות 95, פסיכומטרי 680, אנגלית 125)`, '');
+            chatArea.innerHTML += addPolaMessage(`מצוין! ⌨️\n\nהזן/י את הציונים שלך (למשל: בגרות 95, פסיכומטרי 680, אנגלית 125)`, '');
         } else {
-            chatArea.innerHTML += addPolaMessage('לא הבנתי. אתה רוצה "להעלות מסמכים" או "להזין ידנית"?', '');
+            chatArea.innerHTML += addPolaMessage('להעלות ציונים, לבדוק תכנית ספציפית, או לקבל קישור למחשבון?', '');
         }
         scrollToBottom();
     }
