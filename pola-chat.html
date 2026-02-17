@@ -281,6 +281,12 @@ const departmentDescriptions = {
     // Add more departments as needed
 };
 
+// Spelling variants that map to the canonical departmentDescriptions key
+const departmentAliases = {
+    'פיזיקה': 'פיסיקה',
+    'פיסיקה': 'פיסיקה',
+};
+
 // Combination categories mapping
 const combinationCategories = {
     'טיפולי': ['פסיכולוגיה', 'עבודה סוציאלית', 'ריפוי בעיסוק'],
@@ -864,12 +870,12 @@ function countProgramsByDeptAndCategory(department, combinationCategory) {
     let count = 0;
     const categoryKeywords = combinationCategories[combinationCategory] || [];
 
+    // Count all programs in the category (no department filter)
+    // - these represent all possible combination partners
     for (const dept of programsData) {
         for (const program of dept.programs) {
             const programName = program.name.toLowerCase();
             const deptName = dept.department.toLowerCase();
-
-            if (!deptName.includes(department.toLowerCase()) && !programName.includes(department.toLowerCase())) continue;
 
             for (const keyword of categoryKeywords) {
                 if (programName.includes(keyword.toLowerCase()) || deptName.includes(keyword.toLowerCase())) {
@@ -927,9 +933,15 @@ function handleQuestionnaireStart() {
 }
 
 function detectDepartmentName(text) {
-    const lowerText = text.toLowerCase();
+    // Check aliases first (e.g. פיזיקה → פיסיקה)
+    for (const [alias, canonical] of Object.entries(departmentAliases)) {
+        if (text.includes(alias)) {
+            return canonical;
+        }
+    }
+    // Check canonical names
     for (const dept of Object.keys(departmentDescriptions)) {
-        if (lowerText.includes(dept.toLowerCase())) {
+        if (text.includes(dept)) {
             return dept;
         }
     }
